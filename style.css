@@ -1,51 +1,36 @@
-body {
-    font-family: sans-serif;
-}
+<html><head>
+<link crossorigin="anonymous" rel="stylesheet" href="./style.css">
+    
+</head><body><div id="top_panel"> LEARNING SITE UNDER CONSTRUCTION!!! </div><div id="padding_top"></div>
+<div id="side_panel"> <div id="title"> &gt; Vlan Course 101 </div><div id="list">
+<details>
+  <summary>Understanding Vlan</summary>
+    <p> Vlan on a stick</p>
+    <p> Vlan with trunk</p>
+    <p> Vlan on a layer 3</p>
+</details>
+<details>
+  <summary>VLAN configuration</summary>
+    <p> Configuring Vlan on a stick</p>
+    <p> Trunk Configuration</p>
+    <p> Layer 3 switch configuration</p>
+</details>
 
-#top_panel {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #0a0a0a;
-    width: 100%;
-    height: 20px;
-    padding: 10;
-    z-index: 3;
-    color: white;
-}
+    <details>
+  <summary>STP configuration</summary>
+    <p> Configuring Vlan on a stick</p>
+    <p> Trunk Configuration</p>
+    <p> Layer 3 switch configuration</p>
+</details>
 
-#padding_top {
-    display: block;
-    width: 100%;
-    height: 20px;
-    padding: 10;
-}
+    <details>
+  <summary>Understanding STP </summary>
+    <p> Configuring Vlan on a stick</p>
+    <p> Trunk Configuration</p>
+    <p> Layer 3 switch configuration</p>
+</details>
+    
+</div></div>
 
-#side_panel {
-    display: block;
-    position: fixed;
-    top: 48px;
-    left: 8px;
-    background: #e3e3e3;
-    width: 200px;
-    height: 91%;
-    border-radius: 10px;
-    border: 1px solid #dfdfdf;
-    overflow: hidden;
-}
 
-#side_panel #title {
-    background: #0e85a1;
-    color: white;
-    padding: 10;
-}
-
-#side_panel #list {
-    color: #3e3d3d;
-    position: relative;
-    padding: 20;
-    height: 85%;
-    overflow-y: scroll;
-}
-
+</body></html>
