@@ -55,3 +55,12 @@ body {
     font-size: 13px;
 }
 
+#content {
+    color: #464646;
+    position: absolute;
+    right: 25px;
+    width: 737px;
+    margin: 22px;
+    margin-right: 371px;
+    line-height: 2;
+}
