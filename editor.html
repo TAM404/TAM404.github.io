@@ -4,19 +4,25 @@
   <script src="./markup-engine_v1.js"></script>
 </head><body><div id="top_panel"> LEARNING SITE UNDER CONSTRUCTION!!! </div><div id="padding_top"></div>
 <div id="side_panel_markup"> <div id="title"> &gt; A Vlan Course 101 </div>
-<textarea id="markup" style="width: 340px;" dir="ltr">#Big Title
-##Medium Title
-###Small Title!
+<textarea id="markup" style="width: 340px;" dir="ltr">
+  #My Markup Language! 
+##Processed using my Engine!
+###Which i called ENGINE V1
 As you can see *everything* in here is editable in real time! *cool* isnt it?
-to do bold use \* , like this 
-\* bold \* = *bold
-\^ highlighted \^ = ^ highlighted ^ 
-and Much more to come!
-note that i also built the escape functionality using \\ , to escape characters.
-ALSO! you can't send HTML code and risk running scripts on our beautiful page!
-^ &lt;script&gt; do_evil() &lt;/script&gt; ^ 
 
-see? it's first processed to be turned into text!
+## Features! 
+To do bold use \* , like this 
+*Example :* \* bold \* = *bold
+and to do ^highlighted^ , use \^ 
+*Example:*\^ highlighted \^ = ^ highlighted ^ 
+and Much more to come!
+note that i also built the *escape* functionality using *\\* , to escape characters.
+##Security features!
+*ALSO!* you can't send *HTML* code and risk running ^scripts^ on our beautiful page!
+*example:
+^ <script> do_evil() </script> ^ 
+See? it's first processed to be turned into text!
+  
     
 </textarea>
 
@@ -25,5 +31,5 @@ see? it's first processed to be turned into text!
 
 
 
-  <script> $("#markup").keyup( ()=> { $("#content").html(  engineV1( $("#markup").val()  ) );} ) </script>
+  <script> $("#markup").keyup( ()=> { $("#content").html(  engineV1( $("#markup").val()  ) );} ) ; $("#content").html(  engineV1( $("#markup").val()  )) ; </script>
 </body></html>
