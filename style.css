@@ -35,6 +35,24 @@ body {
     overflow: hidden;
 }
 
+#side_panel_markup {
+    display: block;
+    position: fixed;
+    top: 48px;
+    left: 8px;
+    background: #e3e3e3;
+    height: 91%;
+    border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    overflow: hidden;
+}
+
+#side_panel_markup #title {
+    background: #0e85a1;
+    color: white;
+    padding: 10;
+}
+
 #side_panel #title {
     background: #0e85a1;
     color: white;
@@ -63,4 +81,10 @@ body {
     margin: 22px;
     margin-right: 371px;
     line-height: 2;
+}
+
+#markup{
+    height: 94%;
+    resize: horizontal;
+    min-width: 152px;
 }
