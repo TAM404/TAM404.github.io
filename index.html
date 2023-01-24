@@ -2,8 +2,9 @@
 <link crossorigin="anonymous" rel="stylesheet" href="./style.css">
     
 </head><body><div id="top_panel"> LEARNING SITE UNDER CONSTRUCTION!!! </div><div id="padding_top"></div>
-<div id="side_panel"> <div id="title"> &gt; Vlan Course 101 </div><div id="list">
-<details>
+<div id="side_panel"> <div id="title"> &gt; Vlan Course 101 </div>
+<div id="list">
+<details open="">
   <summary>Understanding Vlan</summary>
     <p> Vlan on a stick</p>
     <p> Vlan with trunk</p>
@@ -29,8 +30,25 @@
     <p> Trunk Configuration</p>
     <p> Layer 3 switch configuration</p>
 </details>
+</div>
+
+
+</div><div id="content">
+    <h1>Routing Between VLANs &amp; Layer 3 Switches</h1>
+    <p>We wrote an article which covers Virtual Local Area Networks (<b>VLANs</b>) as a concept, and another article on configuring VLANs on Cisco switches. The remaining subjects to cover are the different options that exist for routing between VLANs. This will let us illustrate the concepts of inter-vlan routing, Router on a Stick <b>(RoaS)</b>, and Layer 3 Switches (<b>occasionally called MultiLayer Switches</b>).</p>
+
+
+
+<img src="https://www.practicalnetworking.net/wp-content/uploads/2016/10/rvlan-physical.png" style="
+    padding-top: 40px;
+">
     
-</div></div>
+    <h2>Why do we need Routing Between VLANs?
+</h2>
+    <p>As we learned in a prior article, VLANs create a logical separation between Switch ports. Essentially, each VLAN behaves like a separate physical switch. To illustrate this, below are two topology pictures of the same environment – one Physical and one Logical.
+
+The Physical topology depicts a switch and four hosts in two different VLANs – Host A and Host B are in VLAN 20 and Host C and Host D are in VLAN 30. The logical topology reflects how the physical topology operates – the two VLANs essentially create two separate physical switches.</p>
+</div>
 
 
 </body></html>
