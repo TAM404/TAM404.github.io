@@ -23,7 +23,28 @@ function engineV1(str) {
             }
             else if (line.startsWith("[[[")) {
                 newstr += "<img src=\" " + line.slice(3) + " \">";
-            } else {
+            } 
+            else if(line.startsWith("(((")){
+                widget = line.slice(3).trim();
+                switch(widget){
+                    case "note":
+                        newstr += "<dev class='note'>";
+                        break;
+                    default:
+                        newstr+="";
+                }
+            }
+            else if(line.startsWith(")))")){
+                widget = line.slice(3).trim();
+                switch(widget){
+                    case "note":
+                        newstr += "</dev>";
+                        break;
+                    default:
+                        newstr+="";
+                }
+            }
+            else{
 
                 list = line.split("*");
                 line = "";
