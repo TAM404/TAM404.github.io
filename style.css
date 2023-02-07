@@ -45,6 +45,7 @@ body {
     border-radius: 10px;
     border: 1px solid #dfdfdf;
     overflow: hidden;
+    width: 23%;
 }
 
 #side_panel_markup #title {
@@ -76,15 +77,26 @@ body {
 #content {
     color: #464646;
     position: absolute;
-    right: 25px;
-    width: 737px;
+    left: 26%;
+    width: 50%;
     margin: 22px;
-    margin-right: 351px;
     line-height: 2;
 }
 
 #markup{
     height: 94%;
     resize: horizontal;
-    min-width: 152px;
+    width: 100%;
+}
+.note {
+    background-color: #ede6a6;
+    padding-left: 14px;
+    padding-top: 7px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #d5cd89;
+    border-top: 23px solid #edda2f;
+}
+#content img{
+    width:100%;
 }
