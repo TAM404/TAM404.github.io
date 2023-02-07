@@ -1,0 +1,12 @@
+#Dynamic PAT - Initial Outbound Flow
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-pat-initial-1024x329.png
+
+
+
+The Router is serving as our translation device, and is configured with a Dynamic PAT which translates any IP address on the Inside network (*10.6.6.0/24*) to the IP address *32.8.2.66*. When packets are translated, the Router makes note of the attributes of the original and translated packet in the Router’s Translation Table.
+
+Hosts A, B, and C each send a packet. They each use their own, unique Private IP address as the Source IP address, and they each randomly select a Source Port.
+ 
+(((note
+There are approximately *60,000* port numbers that can be chosen, and it is entirely feasible for two different hosts to randomly select the same source port (as is the case with Host B and Host C above).
+)))note
