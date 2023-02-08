@@ -93,22 +93,24 @@ body {
     width: 100%;
 }
 .note {
-    background-color: #ede6a6;
+    background-color: #e9e2a0;
     padding-left: 14px;
     padding-top: 7px;
     display: block;
     border-radius: 10px;
     border: 1px solid #d5cd89;
-    border-top: 23px solid #edda2f;
+    border-top: 23px solid #d9c72a;
+    color: #4e4e4e;
 }
 .gray {
-    background-color: #cfcfcf;
+    background-color: #c7c7c7;
     padding-left: 14px;
     padding-top: 7px;
     display: block;
     border-radius: 10px;
+    color: #4a4a4a;
     border: 1px solid #afafaf;
-    border-top: 23px solid #959595;
+    border-top: 23px solid #818181;
 }
 
 #content img{
