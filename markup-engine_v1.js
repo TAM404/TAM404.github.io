@@ -30,6 +30,9 @@ function engineV1(str) {
                     case "note":
                         newstr += "<dev class='note'>";
                         break;
+                    case "gray":
+                        newstr += "<dev class='gray'>";
+                        break;
                     default:
                         newstr+="";
                 }
@@ -38,6 +41,9 @@ function engineV1(str) {
                 widget = line.slice(3).trim();
                 switch(widget){
                     case "note":
+                        newstr += "</dev>";
+                        break;
+                    case "gray":
                         newstr += "</dev>";
                         break;
                     default:
@@ -59,7 +65,7 @@ function engineV1(str) {
                 line = "";
                 for (var j = 0; j < list.length; j++) {
                     if (j % 2)
-                        line += "<span style='color:red;'>" + list[j] + "</span>";
+                        line += "<span style='color:#d94600;'>" + list[j] + "</span>";
                     else
                         line += list[j];
                 }
