@@ -109,7 +109,7 @@ principaux ont l'initiative des interactions.
 )))note
 
 ###Recenser les cas d'utilisation
-(((gray
+(((note
 *+* Il n'y a pas une manière mécanique et totalement objective de repérer les cas d'utilisation.
 *+* Il faut se placer du point de vue de chaque acteur et déterminer comment il se sert du
 système, dans quels cas il l'utilise, et à quelles fonctionnalités il doit avoir accès.
@@ -122,7 +122,7 @@ des grandes fonctions du système.
 ##Description textuelle
 Chaque cas d'utilisation doit être documenté pour qu'il n'y ait aucune ambiguïté concernant son déroulement et ce qu'il recouvre précisément.
 ###Example:
-(((note
+(((gray
 *+ Identification :*
 *-* *Nom du cas :* Payer CB
 *-* *Objectif :* Détailler les étapes permettant à client de payer par carte bancaire
