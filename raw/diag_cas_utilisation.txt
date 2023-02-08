@@ -109,7 +109,7 @@ principaux ont l'initiative des interactions.
 )))note
 
 ###Recenser les cas d'utilisation
-(((note
+(((gray
 *+* Il n'y a pas une manière mécanique et totalement objective de repérer les cas d'utilisation.
 *+* Il faut se placer du point de vue de chaque acteur et déterminer comment il se sert du
 système, dans quels cas il l'utilise, et à quelles fonctionnalités il doit avoir accès.
@@ -153,7 +153,7 @@ Chaque cas d'utilisation doit être documenté pour qu'il n'y ait aucune ambigu�
 *+ Contraintes liées à l'interface homme-machine :*
 *-* Toujours demander la validation des opérations bancaires
 
-)))note
+)))gray
 
 
 
