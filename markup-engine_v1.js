@@ -108,14 +108,16 @@ function set_sidebar(data){
     newhtml = "";
     for(var i=0;i< data["sections"].length ;i++){
         section =data["sections"][i];
-        newhtml += '<details open=""><summary>' 
+        newhtml += '<details><summary>' 
                 + section["name"]+"</summary>";
         for(var j=0 ; j < section["lessons"].length ; j++){
             newhtml += 
                 "<p><a href='"+section["lessons"][j]["path"] +"'>"
                 + section["lessons"][j]["name"] 
-                + " </a></p>"
+                + " </a></p>";
         }
+        
+        newhtml += "</details>";
         
     }
     $("#list").html( newhtml );
