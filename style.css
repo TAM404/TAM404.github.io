@@ -28,10 +28,11 @@ body {
     top: 48px;
     left: 8px;
     background: rgb(34 34 34);
-    width: 257px;
+    width: 19%;
     height: 91%;
-    border-radius: 10px;
+    border-radius: 6px;
     border: 1px solid #dfdfdf;
+    border-left: 32px solid #151515;
     overflow: hidden;
 }
 
@@ -57,17 +58,18 @@ body {
 #side_panel #title {
     background: #151515;
     color: white;
-    padding: 10;
+    padding: 14px;
+    font-weight: 800;
 }
 
 #side_panel #list {
     color: #d9d9d9;
     font-weight: bold;
     position: relative;
-    padding: 20;
+    padding: 16px;
+    padding-right: 30px;
     height: 85%;
     overflow-y: scroll;
-    scroll: auto;
 }
 #side_panel details{
     padding-top: 12px;
