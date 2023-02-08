@@ -17,11 +17,12 @@
 </body>
 <script>
     page = new URLSearchParams(location.search).get("page");
-    $.get( "/raw/"+page+".txt", function( data ) {
+    course = new URLSearchParams(location.search).get("course");
+    $.get( "/raw/"+course+"/"+page+".txt", function( data ) {
     $("#content").html(  engineV1(data) );
 });
     
-    $.getJSON( "/raw/course-plan.json", function( data ) {
+    $.getJSON( "/raw/"+ course + "/course-plan.json", function( data ) {
   set_sidebar(data);
 });
     
