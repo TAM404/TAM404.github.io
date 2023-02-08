@@ -33,7 +33,7 @@ function engineV1(str) {
                         newstr += "<dev class='gray'>";
                         break;
                     case "exercice":
-                        newstr += "<details class='exercice'>"
+                        newstr += "<details class='exercice' open>"
                         + "<summary class='exerciceSummary'>" + camelCase(widget.join(" ")) + "</summary>";
                         break;              
                     case "hint":
