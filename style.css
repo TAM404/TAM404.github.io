@@ -145,3 +145,43 @@ details p{
 details p a{
     all:unset;
 }
+
+
+.exercice , .warning , .hint, .solution {
+    background-color: #bed3df;
+    display: block;
+    border-radius: 10px;
+    color: #4a4a4a;
+    border: 1px solid #afafaf;
+    overflow: hidden;
+}
+.exercice{
+  background: #bed3df;
+}
+.warning{
+  background: #f5d8d7;
+}
+.hint{
+  background: #dfe0e1;
+}
+.solution{
+  background-color: #cde9d0;
+}
+
+.exerciceSummary{
+  background: #293b76;
+}
+.hintSummary{
+      background-color: #2a2727;
+}
+.warningSummary{
+  background-color: #b13e3b;
+}
+.solutionSummary{
+  background-color: #528102;
+}
+
+details summary {
+    user-select: none;
+    color: #e0e0e0;
+}
