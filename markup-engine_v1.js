@@ -1,4 +1,3 @@
-
 function engineV1(str) {
     newstr = ""
     str = str.split("\n");
@@ -25,13 +24,29 @@ function engineV1(str) {
                 newstr += "<img src=\" " + line.slice(3) + " \">";
             } 
             else if(line.startsWith("(((")){
-                widget = line.slice(3).trim();
-                switch(widget){
+                widget = line.slice(3).trim().split(" ");
+                switch(widget[0]){
                     case "note":
                         newstr += "<dev class='note'>";
                         break;
                     case "gray":
                         newstr += "<dev class='gray'>";
+                        break;
+                    case "exercice":
+                        newstr += "<details class='exercice'>"
+                        + "<summary class='exerciceSummary'>" + camelCase(widget.join(" ")) + "</summary>";
+                        break;              
+                    case "hint":
+                        newstr += "<details class='hint'>"
+                        + "<summary class='hintSummary'>" + camelCase(widget.join(" ")) + "</summary>";
+                        break;
+                    case "solution":
+                        newstr += "<details class='solution'>"
+                        + "<summary class='solutionSummary'>" + camelCase(widget.join(" ")) + "</summary>";
+                        break;
+                    case "warning":
+                        newstr += "<details class='warning'>"
+                        + "<summary class='warningSummary'>" + camelCase(widget.join(" ")) + "</summary>";
                         break;
                     default:
                         newstr+="";
@@ -46,8 +61,20 @@ function engineV1(str) {
                     case "gray":
                         newstr += "</dev>";
                         break;
+                    case "exercice":
+                        newstr += "</details>";
+                        break;
+                    case "hint":
+                        newstr += "</details>";
+                        break;
+                    case "solution":
+                        newstr += "</details>";
+                        break;
+                    case "warning":
+                        newstr += "</details>";
+                        break;
                     default:
-                        newstr+="";
+                        newstr+="</details>";
                 }
             }
             else{
@@ -81,6 +108,9 @@ function engineV1(str) {
     return newstr;
 }
 
+function camelCase(str){
+    return str.slice(0,1).toUpperCase() + str.slice(1);
+}
 function HTMLescape(str) {
     return str.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 }
