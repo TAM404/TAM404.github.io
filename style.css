@@ -141,3 +141,7 @@ body {
 details p{
   padding-left: 24px;
 }
+
+details p a{
+    all:unset;
+}
