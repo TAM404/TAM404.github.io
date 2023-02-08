@@ -1,0 +1,161 @@
+#Diagrammes de cas d'utilisation
+###Modélisation des besoins:
+Avant de développer un système, il faut savoir précisément à *quoi* il devra servir, cad à quels
+besoins il devra répondre.
+*+* Avec UML, on modélise les besoins au moyen de diagrammes de cas d'utilsation
+###Exemple de diagramme de cas d'utilisation
+[[[https://i.imgur.com/TxJRFGJ.png
+
+##Compositions:
+*1. Cas d'utilisation:*
+Un cas d'utilisation est un service rendu à l'utilisateur, il implique des séries d'actions plus
+élémentaires.
+[[[https://i.imgur.com/0QFX1Cn.png
+*2. Acteur * 
+Un acteurs est une entité extérieure au système modélisé, et qui interagit directement avec
+lui.
+[[[https://i.imgur.com/o7ezuWH.png
+##Relations:
+###Relations entre cas d'utilisation en acteurs
+*+* Les acteurs impliqués dans un cas d'utilisation lui sont liés par une association.
+*+* Un acteur peut utiliser plusieurs fois le même cas d'utilisation.
+[[[https://i.imgur.com/iHFugLM.png
+###Relations entre cas d'utilisation
+*Inclusion :* le cas A inclut le cas B (B est une partie obligatoire de A).
+
+[[[https://i.imgur.com/SRXstlT.png
+
+*Extension :* le cas B étend le cas A (B est une partie optionelle de A).
+
+[[[https://i.imgur.com/RwoYBE1.png
+
+*Généralisation :* le cas A est une généralisation du cas du cas B (B est une sorte de A).
+
+[[[https://i.imgur.com/Hw2vEC0.png
+
+###Dépendances d'inclusion et d'extension
+*+* Les inclusions et les extensions sont représentées par des dépendances.
+*+* On note toujours la dépendance par une fleshe pointillée *B---->A*  qui se lit  *B* dépend
+de *A* .
+
+(((note
+*+* Lorsqu'un cas *A* inclut un cas *B*, *A* dépend de *B*.
+*+* Lorsqu'un cas *B* étend un cas *A*, *B* dépend aussi de *A*.
+*+* Losqu'un élément *A* dépend d'un élément *B*, toute modification de *B* sera susceptible d'avoir un impact sur *A*.
+)))note
+
+*+* Les ^*<<incude>>*^ et les ^*<<extend>>*^ sont des stéréotypes (entre guillements) des relations de dépendance.
+
+(((note
+*Attention :*
+Le sens des flèches indique le dépendance, pas le sens de la relation d'inclusion.
+
+)))note
+
+###Réutilisabilité avec les inclusions et les extensions
+[[[https://i.imgur.com/ZPSfCpc.png
+Les relations entre cas permettent la réutilisabilité du cas *<<s'authentifier>>* : il sera inutile
+de développer plusieurs fois un module d'authentification.
+###Décomposition grâce aux inclusions et aux extensions
+[[[https://i.imgur.com/OadCRhX.png
+Quand un cas est trop complexe (faisant intervenir un trop grand nombre d'actions), on
+peut procéder à sa décomposition en cas plus simples.
+*^Par example:^* 
+dans la figure sous dessus on a decomposé *<Passer commande>* on 
+*+ <Valider panier>*
+*+ <Authentifier>* et 
+*+ <Payer>*.
+
+###Généralisation
+[[[https://i.imgur.com/WjWd916.png
+*+* Un virement est est un cas particulier de paiement.
+*+* Un virement est une sorte de paiement.
+*+* La flèche pointe vers l'élément général.
+
+(((note
+Cette relation de généralisation/spécialisation est présente dans la plupart des diagrammes
+UML et se traduit par le concept d'héritage dans les langages orientés objet.
+)))note
+###Relations entre acteurs
+la seule relation possible entres acteurs :* la généralisation.*
+[[[https://i.imgur.com/IqBPscm.png
+
+###Identification des acteurs
+Les principaux acteurs sont les utilisateurs du système.
+
+(((note
+*Attention :*
+Un acteur correspond à un rôle, pas à une personne physique.
+*+* Une même personne physique peut être représentée par plusieurs acteurs si elle a plusieurs rôles.
+*+* Si plusieurs personnes jouent le même rôle vis-à-vis du système, elles seront représentées par un seul acteur.
+* En plus des utilisateurs, les acteurs peuvent être :*
+*+* Des périphériques manipulés par le système (imprimantes...) ;
+*+* Des logiciels déjà disponibles à intégrer dans le projet ;
+*+* Des systèmes informatiques externes au système mais qui interagissent avec lui, etc.
+*+* Pour faciliter la recherche des acteurs, on se fonde sur les frontières du système.
+
+)))note
+
+###Acteurs principaux et secondaires
+[[[https://i.imgur.com/iBx8Rxc.png
+
+
+*+* L'acteur est dit principal pour un cas d'utilisation lorsque l'acteur est à l'initiative des
+échanges nécessaires pour réaliser le cas d'utilisation.
+*+* Les acteurs secondaires sont sollicités par le système alors que le plus souvent, les acteurs
+principaux ont l'initiative des interactions.
+(((note
+*+* Le plus souvent, les acteurs secondaires sont d'autres ystèmes informatiques avec lesquels le système développé est inter-connecté.
+)))note
+
+###Recenser les cas d'utilisation
+(((note
+*+* Il n'y a pas une manière mécanique et totalement objective de repérer les cas d'utilisation.
+*+* Il faut se placer du point de vue de chaque acteur et déterminer comment il se sert du
+système, dans quels cas il l'utilise, et à quelles fonctionnalités il doit avoir accès.
+*+* Il faut éviter les redondances et limiter le nombre de cas en se situant au bon niveau
+d'abstraction (par exemple, ne pas réduire un cas à une seule action).
+*+* Il ne faut pas faire apparaître les détails des cas d'utilisation, mais il faut rester au niveau
+des grandes fonctions du système.
+)))note
+
+##Description textuelle
+Chaque cas d'utilisation doit être documenté pour qu'il n'y ait aucune ambiguïté concernant son déroulement et ce qu'il recouvre précisément.
+###Example:
+(((note
+*+ Identification :*
+*-* *Nom du cas :* Payer CB
+*-* *Objectif :* Détailler les étapes permettant à client de payer par carte bancaire
+*-* *Acteurs :* Client, Banque (secondaire)
+*-* *Date* : 18/09
+*-* *Responsables :* Toto
+*-* * Version :* 1.0
+*+ Séquencements :*
+*-* Le cas d'utilisation commence lorsqu'un client demande le paiement par carte bancaire
+*+* Pré-conditions
+*-* Le client a validé sa commande
+*+* Enchaînement nominal
+*1.* Le client saisit les informations de sa carte bancaire
+*2.* Le système vérifie que le numéro de CB est correct
+*3.* Le système vérifie la carte auprès du système bancaire
+*4.* Le système demande au système bancaire de débiter le client
+*5.* Le système notifie le client du bon déroulement de la transaction
+*+ Enchaînements alternatifs*
+*1.* En *(2)* : si le numéro est incorrect, le client est averti de l'erreur, et invité à recommencer
+*2.* En *(3)* : si les informations sont erronées, elles sont re-demandées au client
+*+ Post-conditions*
+*-* La commande est validée
+*-* Le compte de l'entreprise est crédité
+*+ Rubriques optionnelles*
+*-* Contraintes non fonctionnelles :
+*-* Fiabilité : les accès doivent être sécurisés
+*-* Confidentialité : les informations concernant le client ne doivent pas être divulgués
+*+ Contraintes liées à l'interface homme-machine :*
+*-* Toujours demander la validation des opérations bancaires
+
+)))note
+
+
+
+
+
