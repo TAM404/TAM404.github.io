@@ -5,33 +5,8 @@
     
 </head><body><div id="top_panel"> LEARNING SITE UNDER CONSTRUCTION!!! </div><div id="padding_top"></div>
 <div id="side_panel"> <div id="title"> &gt; Vlan Course 101 </div>
+    
 <div id="list">
-<details open="">
-  <summary>Understanding Vlan</summary>
-    <p> Vlan on a stick</p>
-    <p> Vlan with trunk</p>
-    <p> Vlan on a layer 3</p>
-</details>
-<details>
-  <summary>VLAN configuration</summary>
-    <p> Configuring Vlan on a stick</p>
-    <p> Trunk Configuration</p>
-    <p> Layer 3 switch configuration</p>
-</details>
-
-    <details>
-  <summary>STP configuration</summary>
-    <p> Configuring Vlan on a stick</p>
-    <p> Trunk Configuration</p>
-    <p> Layer 3 switch configuration</p>
-</details>
-
-    <details>
-  <summary>Understanding STP </summary>
-    <p> Configuring Vlan on a stick</p>
-    <p> Trunk Configuration</p>
-    <p> Layer 3 switch configuration</p>
-</details>
 </div>
 
 
@@ -45,5 +20,10 @@
     $.get( "/raw/"+page+".txt", function( data ) {
     $("#content").html(  engineV1(data) );
 });
+    
+    $.getJSON( "/raw/course-plan.json", function( data ) {
+  set_sidebar(data);
+});
+    
     </script>
 </html>
