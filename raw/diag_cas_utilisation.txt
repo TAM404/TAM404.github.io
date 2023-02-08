@@ -38,7 +38,7 @@ lui.
 *+* On note toujours la dépendance par une fleshe pointillée *B---->A*  qui se lit  *B* dépend
 de *A* .
 
-(((note
+(((gray
 *+* Lorsqu'un cas *A* inclut un cas *B*, *A* dépend de *B*.
 *+* Lorsqu'un cas *B* étend un cas *A*, *B* dépend aussi de *A*.
 *+* Losqu'un élément *A* dépend d'un élément *B*, toute modification de *B* sera susceptible d'avoir un impact sur *A*.
