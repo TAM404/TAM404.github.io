@@ -102,3 +102,21 @@ function escaper(str) {
     }
     return str2 + str[i];
 }
+
+function set_sidebar(data){
+    $("#title").html( HTMLescape( data["name"] ) );
+    newhtml = "";
+    for(var i=0;i< data["sections"].length ;i++){
+        section =data["sections"][i];
+        newhtml += '<details open=""><summary>' 
+                + section["name"]+"</summary>";
+        for(var j=0 ; j < section["lessons"].length ; j++){
+            newhtml += 
+                "<p><a href='"+section["lessons"][j]["path"] +"'>"
+                + section["lessons"][j]["name"] 
+                + " </a></p>"
+        }
+        
+    }
+    $("#list").html( newhtml );
+}
