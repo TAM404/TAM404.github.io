@@ -7,7 +7,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background: #0a0a0a;
+    background: #151515;
     width: 100%;
     height: 20px;
     padding: 10;
@@ -27,8 +27,8 @@ body {
     position: fixed;
     top: 48px;
     left: 8px;
-    background: #e3e3e3;
-    width: 200px;
+    background: rgb(34 34 34);
+    width: 257px;
     height: 91%;
     border-radius: 10px;
     border: 1px solid #dfdfdf;
@@ -49,33 +49,35 @@ body {
 }
 
 #side_panel_markup #title {
-    background: #0e85a1;
+    background: #151515;
     color: white;
     padding: 10;
 }
 
 #side_panel #title {
-    background: #0e85a1;
+    background: #151515;
     color: white;
     padding: 10;
 }
 
 #side_panel #list {
-    color: #3e3d3d;
+    color: #d9d9d9;
+    font-weight: bold;
     position: relative;
     padding: 20;
     height: 85%;
     overflow-y: scroll;
+    scroll: auto;
 }
 #side_panel details{
     padding-top: 12px;
     padding-bottom: 7px;
-    border-top: 1px solid #a5a5a5;
+    border-top: 2px solid #375601;
     font-size: 13px;
 }
 
 #content {
-    color: #464646;
+    color: #424242;
     position: absolute;
     left: 26%;
     width: 50%;
@@ -97,16 +99,31 @@ body {
     border: 1px solid #d5cd89;
     border-top: 23px solid #edda2f;
 }
-.gray {
-    background-color: #cfcfcf;
-    padding-left: 14px;
-    padding-top: 7px;
-    display: block;
-    border-radius: 10px;
-    border: 1px solid #afafaf;
-    border-top: 23px solid #959595;
-}
-
 #content img{
     width:100%;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track { 
+  background-color:#131313;
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #151515;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #151515; 
+}
+
+details p{
+  padding-left: 24px;
 }
