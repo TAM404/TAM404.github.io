@@ -112,7 +112,7 @@ function set_sidebar(data){
                 + section["name"]+"</summary>";
         for(var j=0 ; j < section["lessons"].length ; j++){
             newhtml += 
-                "<p><a href='"+section["lessons"][j]["path"] +"'>"
+                "<p><a href='?page="+section["lessons"][j]["path"] +"&course="+course+"'>"
                 + section["lessons"][j]["name"] 
                 + " </a></p>";
         }
