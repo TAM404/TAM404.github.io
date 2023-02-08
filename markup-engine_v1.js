@@ -116,9 +116,7 @@ function set_sidebar(data){
                 + section["lessons"][j]["name"] 
                 + " </a></p>";
         }
-        
         newhtml += "</details>";
-        
     }
     $("#list").html( newhtml );
 }
