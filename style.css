@@ -97,6 +97,16 @@ body {
     border: 1px solid #d5cd89;
     border-top: 23px solid #edda2f;
 }
+.gray {
+    background-color: #cfcfcf;
+    padding-left: 14px;
+    padding-top: 7px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #afafaf;
+    border-top: 23px solid #959595;
+}
+
 #content img{
     width:100%;
 }
