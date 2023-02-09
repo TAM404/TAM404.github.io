@@ -89,9 +89,21 @@ body {
 
 #markup{
     height: 94%;
-    resize: horizontal;
+    position: absolute;
     width: 100%;
+    overflow: scroll;
+    background:#e0060600;
+    color:transparent;
+    caret-color: red;
+    z-index:50;
 }
+#output{
+    height: 94%;
+    position: absolute;
+    width: 100%;
+    overflow: scroll;
+}
+
 .note {
     background-color: #e9e2a0;
     padding-left: 14px;
@@ -185,3 +197,5 @@ details summary {
     user-select: none;
     color: #e0e0e0;
 }
+
+
