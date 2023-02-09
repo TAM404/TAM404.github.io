@@ -131,10 +131,43 @@ See? it's first processed to be turned into text!
     $("#markup").keyup( ()=> { $("#content").html(  engineV1( $("#markup").text()  ) );} ) ; 
     $("#content").html(  engineV1( $("#markup").text()  )) ;
     
+    let main = document.querySelector('div#main');
+let outp = document.querySelector('div#output');
+
+// Colors to replace
+const keywords = {
+  cool: "orange",
+  "\\*([^*]*)\\*": "red",
+  happy: "blue"
+};
+
+// When user enters something, style it
+main.addEventListener('input', function(e)
+{
+  outp.innerText = this.innerText;
+
+  for (let i = 0; i < Object.keys(keywords).length; i++)
+  {
+    const keyword = Object.keys(keywords)[i];
+    const color = keywords[ keyword ];
+    
+    outp.innerHTML = outp.innerHTML.replaceAll(
+    new RegExp('(' + keyword + ')', 'gi'), '<span style="color: ' + color + ';">$1</span>'
+    );
+  }
+});
+
+// Style initial values
+main.dispatchEvent(new Event('input'));
+main.focus();
+//main.addEventListener('click', outp.focus);
+    
+    
     document.getElementById("markup").addEventListener("scroll", function (e) {
           
       document.getElementById("output").scrollTo( this.scrollLeft , this.scrollTop);
     }  ,true);
+    
     
   </script>
 </body></html>
