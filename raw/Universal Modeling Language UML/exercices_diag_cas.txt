@@ -1,0 +1,24 @@
+#TD1 : Diagramme de cas d'utilisation UML
+
+###1 Identification des acteurs et de cas d'utilisation simples
+(((exercice
+Considérons une station-service de distribution d'essence. Les clients se servent de l'essence et le
+pompiste remplit les cuves.
+*Question :* Le client se sert de l'essence de la façon suivante : il prend un pistolet accroché à une
+pompe et appuie sur la gâchette pour prendre de l'essence. Qui est l'acteur du système ? Est-ce le client,
+le pistolet ou la gâchette ?
+(((solution
+C'est le client. Un acteur est toujours extérieur au système. Dénir les acteurs d'un système, c'est
+aussi en définir les bornes.
+)))
+Jojo, dont le métier est pompiste, peut se servir de l'essence pour sa voiture. Pour
+modéliser cette activité de Jojo, doit-on définir un nouvel acteur ? Comment modélise-t-on ça ?
+(((hint
+Jojo est ici considéré comme un client
+)))
+(((solution
+Jojo est ici considéré comme un client. Pour définir les acteurs, il faut raisonner en termes de
+rôles.
+[[[https://i.imgur.com/J9Lg11x.png
+)))
+)))
