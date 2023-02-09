@@ -31,7 +31,79 @@ and *Much* more to come!
 ###Escape character!
 Also built the *escape* functionality using *\\* has been built, to escape characters. 
 *Example:* use \\\* to write \* without triggering any marking! 
+##notes, warning, gray etc
+###Note
+(((gray
+^(((note^
+Note content
+^)))note^
+)))gray
+which gets processed to
+(((note
+Note content
+)))note
+###Gray
+(((gray
+^(((gray^
+gray content
+^)))gray^
+)))gray
+which gets processed to
+(((gray
+gray content
+)))gray
 
+###Warning
+(((gray
+^(((warning^
+Note content
+^)))warning^
+)))gray
+which gets processed to
+(((warning
+warning content
+)))warning
+##Exercices
+enclose your exercices by
+(((gray 
+^(((exercice^ 
+exercices content
+^)))^ 
+)))gray
+Which gets processed to this
+(((exercice
+exercices content
+)))
+
+you can also have hints, and or solutions
+
+(((gray
+^(((exercice^ 
+exercices content
+^(((hint^
+hint content
+^)))
+^(((solution
+solution content
+^)))
+^)))^ 
+)))gray
+
+which gets processed to 
+
+(((exercice
+exercices content
+(((hint
+hint content
+)))
+(((solution
+solution content
+)))
+)))
+###inside each others
+(((note
+You can put exerice,hint,solution,warning,gray,note etc elements inside each others as u wish.
+)))note
 ##Security features!
 *ALSO!* you can't send *HTML* code and risk running ^scripts^ on our beautiful page!
 *example:
@@ -39,11 +111,11 @@ Also built the *escape* functionality using *\\* has been built, to escape chara
 See? it's first processed to be turned into text!
 
 
-
-*>* ^BUILD FROM SCRATCH^, Using JS....................*All rights reserved*..... 
+*>* ^BUILD FROM SCRATCH^, Using JS....................*All rights not reserved*..... 
     
 
     
+
 </textarea>
 
 
