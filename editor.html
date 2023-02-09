@@ -132,8 +132,8 @@ See? it's first processed to be turned into text!
 let outp = document.querySelector('#output');
     
     
-    $('#markup').keyup( ()=> { $("#content").html(  engineV1( main.innerText  ) );} ) ; 
-    $("#content").html(  engineV1( main.innerText  )) ;
+    $('#markup').keyup( ()=> { $("#content").html(  engineV1( main.value  ) );} ) ; 
+    $("#content").html(  engineV1( main.value  )) ;
     
 
 // Colors to replace
@@ -146,7 +146,7 @@ const keywords = {
 // When user enters something, style it
 main.addEventListener('input', function(e)
 {
-  outp.innerText = this.innerText;
+  outp.innerText = this.value;
 
   for (let i = 0; i < Object.keys(keywords).length; i++)
   {
