@@ -98,6 +98,7 @@ body {
     color:transparent;
     caret-color: red;
     z-index:50;
+    padding: 0;
 }
 #output{
     font-family: ui-serif;
@@ -106,6 +107,7 @@ body {
     position: absolute;
     width: 100%;
     overflow: scroll;
+    padding: 0;
 }
 
 .note {
