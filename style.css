@@ -90,6 +90,8 @@ body {
 #markup{
     height: 94%;
     position: absolute;
+    font-family: ui-serif;
+    font-size:15px;
     width: 100%;
     overflow: scroll;
     background:#e0060600;
@@ -98,6 +100,8 @@ body {
     z-index:50;
 }
 #output{
+    font-family: ui-serif;
+    font-size:15px;
     height: 94%;
     position: absolute;
     width: 100%;
