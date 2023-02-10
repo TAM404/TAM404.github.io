@@ -46,12 +46,12 @@ h2{
     position: fixed;
     top: 48px;
     left: 8px;
-    background: #e3e3e3;
+    background: #0a0a0a;
     height: 91%;
     border-radius: 10px;
     border: 1px solid #dfdfdf;
-    overflow: hidden;
     width: 23%;
+    border-right: 16px solid #0a0a0a;
 }
 
 #side_panel_markup #title {
@@ -98,8 +98,9 @@ h2{
   font-family: system-ui;
   position: absolute;
   overflow: scroll;
-  padding: 15px;
+  margin: 15px;
   transition: 0.5s;
+  border-radius:5px;
 }
 #markup{
     width: 100%;
@@ -110,10 +111,9 @@ h2{
     border:none;
 }
 #output{
-  
-    color: #c8d2ea;
-    /*width: 100%;*/
-    background:#0a0a0a;
+  color: #c8d2ea;
+  width: 100%;
+  background:#0a0a0a;
 }
 
 .note {
@@ -216,11 +216,17 @@ details summary {
     transition: 0.5s;*/
 }
 #side_panel_markup:hover .editable{
-  padding: 10px;
+  margin: 10px;
   /*
     background:#0a0a0a;
     transition: 0.5s;*/
 }
 
+#output::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+#markup::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 
 
