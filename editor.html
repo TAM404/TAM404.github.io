@@ -171,7 +171,8 @@ main.addEventListener('input', function(e)
     outp.innerHTML = outp.innerHTML.replaceAll(
     new RegExp('(' + keyword + ')', 'gi'), '<span style="color: ' + color + ';">$1</span>'
     );
-  }
+  } 
+  outp.innerHTML=outp.innerHTML+"<br>".repeat(20);
 });
 
     
