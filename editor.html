@@ -136,13 +136,13 @@ let outp = document.querySelector('#output');
     
 
 // Colors to replace
-keywords = {
-    "(\\(\\(\\([^<]*)<br>": "#ffa657",
-    "\\*([^*]*)\\*": "red",
-    "(\\)\\)\\)[^<]*)<br>": "#ffa657",
-    "(\\[\\[\\[[^<]*)<br>": "blue"
-};
-
+keywords={
+    "(\\(\\(\\([^<]*)<br>": "#c7b439",
+    "\\*([^*]*)\\*": "#607d8b",
+    "(\\)\\)\\)[^<]*)<br>": "#c7b439",
+  "(\\[\\[\\[[^<]*)<br>":"#43b0b5",
+  "*(#[^<]*)<br>":"287ccb"
+}
 // When user enters something, style it
 main.addEventListener('input', function(e)
 {
