@@ -92,29 +92,28 @@ h2{
     line-height: 2;
 }
 
+.editable {
+  height: 94%;
+  font-size: 13px;
+  font-family: system-ui;
+  position: absolute;
+  overflow: scroll;
+  padding: 15px;
+  transition: 0.5s;
+}
 #markup{
-    height: 94%;
-    position: absolute;
-    font-family: system-ui;
-    font-size: 13px;
     width: 100%;
-    overflow: scroll;
     background:#ffffff00;
     color:transparent;
     caret-color: red;
     z-index:50;
-    padding: 0;
+    border:none;
 }
 #output{
-    font-family: system-ui;
-    font-size: 13px;
-    height: 94%;
-    background:#202124;
+  
     color: #c8d2ea;
-    position: absolute;
-    width: 100%;
-    overflow: scroll;
-    padding: 0;
+    /*width: 100%;*/
+    background:#0a0a0a;
 }
 
 .note {
@@ -210,5 +209,18 @@ details summary {
     user-select: none;
     color: #e0e0e0;
 }
+#side_panel_markup:hover #output{
+  background-color: #090e0e;
+  /*
+    background:#0a0a0a;
+    transition: 0.5s;*/
+}
+#side_panel_markup:hover .editable{
+  padding: 10px;
+  /*
+    background:#0a0a0a;
+    transition: 0.5s;*/
+}
+
 
 
