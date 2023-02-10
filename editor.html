@@ -137,9 +137,10 @@ let outp = document.querySelector('#output');
 
 // Colors to replace
 keywords = {
-  "(\\(\\(\\([^\\n]*[\\n])": "#ffa657",
-  "\\*([^*]*)\\*": "red",
-  "(\\)\\)\\)[^\\n]*)": "#ffa657"
+    "(\\(\\(\\([^<]*)<br>": "#ffa657",
+    "\\*([^*]*)\\*": "red",
+    "(\\)\\)\\)[^<]*)<br>": "#ffa657",
+    "(\\[\\[\\[[^<]*)<br>": "blue"
 };
 
 // When user enters something, style it
