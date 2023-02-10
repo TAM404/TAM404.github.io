@@ -136,22 +136,37 @@ let outp = document.querySelector('#output');
     
 
 // Colors to replace
-keywords={
-    "(\\(\\(\\([^<]*)<br>": "#c7b439",
-    "\\*([^*]*)\\*": "#607d8b",
-    "(\\)\\)\\)[^<]*)<br>": "#c7b439",
-    "(\\[\\[\\[[^<]*)<br>": "#43b0b5",
-    "(#[^<]*)<br>": "287ccb"
-}
+keywords=[
+    [
+        "(#[^<]*<br>)",
+        "#287ccb"
+    ],
+    [
+        "(\\(\\(\\([^<]*<br>)",
+        "#c7b439"
+    ],
+    [
+        "\\*([^*]*)\\*",
+        "#607d8b"
+    ],
+    [
+        "(\\)\\)\\)[^<]*<br>)",
+        "#c7b439"
+    ],
+    [
+        "(\\[\\[\\[[^<]*<br>)",
+        "#43b0b5"
+    ]
+];
 // When user enters something, style it
 main.addEventListener('input', function(e)
 {
   outp.innerText = this.value;
 
-  for (let i = 0; i < Object.keys(keywords).length; i++)
+  for (let i = 0; i < keywords.length; i++)
   {
-    const keyword = Object.keys(keywords)[i];
-    const color = keywords[ keyword ];
+    const keyword = keywords[i][0];
+    const color = keywords[i][1];
     
     outp.innerHTML = outp.innerHTML.replaceAll(
     new RegExp('(' + keyword + ')', 'gi'), '<span style="color: ' + color + ';">$1</span>'
@@ -159,6 +174,7 @@ main.addEventListener('input', function(e)
   }
 });
 
+    
 // Style initial values
 main.dispatchEvent(new Event('input'));
 main.focus();
