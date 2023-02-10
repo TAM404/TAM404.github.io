@@ -47,17 +47,19 @@ h2{
     top: 48px;
     left: 8px;
     background: #0a0a0a;
-    height: 91%;
+    height: 89%;
     border-radius: 10px;
     border: 1px solid #dfdfdf;
     width: 23%;
+    border-bottom: 18px solid #0a0a0a;
     border-right: 16px solid #0a0a0a;
 }
 
 #side_panel_markup #title {
     background: #151515;
-    color: white;
+    color: #2ead62;
     padding: 10;
+    border-radius: 5px 0 5px 0;
 }
 
 #side_panel #title {
