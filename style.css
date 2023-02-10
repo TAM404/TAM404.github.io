@@ -12,9 +12,14 @@ body {
     height: 20px;
     padding: 10;
     z-index: 3;
-    color: white;
+    color: #43b0b5;
 }
-
+h1{
+  color:#2b54ba;
+}
+h2{
+  color:#43b0b5;
+}
 #padding_top {
     display: block;
     width: 100%;
@@ -57,7 +62,7 @@ body {
 
 #side_panel #title {
     background: #151515;
-    color: white;
+    color:white;
     padding: 14px;
     font-weight: 800;
 }
@@ -79,7 +84,7 @@ body {
 }
 
 #content {
-    color: #424242;
+    color: #3a3737;
     position: absolute;
     left: 26%;
     width: 50%;
@@ -90,20 +95,22 @@ body {
 #markup{
     height: 94%;
     position: absolute;
-    font-family: ui-serif;
-    font-size:15px;
+    font-family: system-ui;
+    font-size: 13px;
     width: 100%;
     overflow: scroll;
-    background:#e0060600;
+    background:#ffffff00;
     color:transparent;
     caret-color: red;
     z-index:50;
     padding: 0;
 }
 #output{
-    font-family: ui-serif;
-    font-size:15px;
+    font-family: system-ui;
+    font-size: 13px;
     height: 94%;
+    background:#202124;
+    color: #c8d2ea;
     position: absolute;
     width: 100%;
     overflow: scroll;
