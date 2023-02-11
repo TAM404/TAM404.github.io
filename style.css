@@ -147,14 +147,17 @@ h2{
 
 .editable {
   height: 94%;
+  width: 100%;
   font-size: 13px;
   font-family: system-ui;
   position: absolute;
-  overflow: scroll;
+  overflow-y: scroll;
   margin: 25px;
   border-radius:18px;
   outline: none;
   transition: 0.5s;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 #markup{
     width: 100%;
@@ -162,8 +165,8 @@ h2{
     color:transparent;
     caret-color: red;
     z-index:50;
+    padding: 0;
     border:none;
-    padding:0;
 }
 #output{
   color: #c8d2ea;
