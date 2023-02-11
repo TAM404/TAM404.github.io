@@ -163,6 +163,7 @@ h2{
     caret-color: red;
     z-index:50;
     border:none;
+    padding:0;
 }
 #output{
   color: #c8d2ea;
