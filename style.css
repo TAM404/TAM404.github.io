@@ -46,20 +46,50 @@ h2{
     position: fixed;
     top: 48px;
     left: 8px;
-    background: #0a0a0a;
-    height: 89%;
-    border-radius: 10px;
-    border: 1px solid #dfdfdf;
+    background: #090e0e;
+    height: 85%;
+    border-radius: 15px;
     width: 23%;
-    border-bottom: 18px solid #0a0a0a;
+    border: 11px solid #375601;
     border-right: 16px solid #0a0a0a;
+    border-bottom: 28px solid #0a0a0a;
+    transition:1s;
+    animation: myanimation 10s infinite;
+    color: #4caf50;
+}
+
+@keyframes myanimation {
+  0% {border-top: 11px solid #238e45;
+    border-left: 11px solid #238e45;
+     color:#4CAF50;
+     }
+  20%{border-top: 11px solid #2065b1;
+    border-left: 11px solid #2065b1;
+     color:#3a55ec;
+     }
+  40%{border-top: 11px solid #39b0b5;
+    border-left: 11px solid #39b0b5;
+     color:#03A9F4;
+     }
+  60%{border-top: 11px solid #9db81b;
+    border-left: 11px solid #9db81b;
+     color:#FFEB3B;
+     }
+  80%{border-top: 11px solid #ca1955;
+    border-left: 11px solid #ca1955;
+     color:#E91E63;
+     }
+  90%{border-top: 11px solid #238e45;
+    border-left: 11px solid #238e45;
+      color:#4CAF50;
+     }
 }
 
 #side_panel_markup #title {
-    background: #151515;
-    color: #2ead62;
+    background: #0a0a0a;
     padding: 10;
-    border-radius: 5px 0 5px 0;
+    margin: -3px;
+    border-radius: 10px 10px 0 10px;
 }
 
 #side_panel #title {
@@ -100,9 +130,9 @@ h2{
   font-family: system-ui;
   position: absolute;
   overflow: scroll;
-  margin: 15px;
+  margin: 25px;
   transition: 0.5s;
-  border-radius:5px;
+  border-radius:18px;
 }
 #markup{
     width: 100%;
@@ -115,7 +145,7 @@ h2{
 #output{
   color: #c8d2ea;
   width: 100%;
-  background:#0a0a0a;
+  background: #090e0e;
 }
 
 .note {
@@ -211,14 +241,21 @@ details summary {
     user-select: none;
     color: #e0e0e0;
 }
-#side_panel_markup:hover #output{
-  background-color: #090e0e;
+#side_panel_markup:hover #output,#side_panel_markup:hover{
+  background-color: #0a0a0a;
   /*
     background:#0a0a0a;
     transition: 0.5s;*/
 }
+#side_panel_markup:hover{
+  border-top-color:#238e45;
+  border-left-color:#238e45;
+}
+#side_panel_markup:hover #title{
+  background:#070707;
+}
 #side_panel_markup:hover .editable{
-  margin: 10px;
+  margin: 15px;
   /*
     background:#0a0a0a;
     transition: 0.5s;*/
