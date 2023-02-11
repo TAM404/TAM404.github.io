@@ -1,5 +1,7 @@
 function engineV1(str) {
+    
     newstr = ""
+    exerice= 0 ;
     str = str.split("\n");
     for (var i = 0; i < str.length; i++) {
         line = HTMLescape(str[i]);
@@ -35,6 +37,7 @@ function engineV1(str) {
                     case "exercice":
                         newstr += "<details class='exercice' open>"
                         + "<summary class='exerciceSummary'>" + camelCase(widget.join(" ")) + "</summary>";
+                        exerice++;
                         break;              
                     case "hint":
                         newstr += "<details class='hint'>"
@@ -51,26 +54,26 @@ function engineV1(str) {
                         
                     case "optionMulti":
                         newstr+=
-                              '<input type="checkbox" id="optionMulti'+i+'"  value="'+
+                              '<input type="checkbox" id="optionMulti'+i+'"  name="'+exerice+'" value="'+
                             HTMLescape(widget.slice(1).join(" ")) +'">'
                               +'<label for="optionMulti' + i + '">'+'';
                         break;
                                 
                     case "option":
                        newstr+=
-                              '<input type="radio" id="option'+i+'"  value="'+
+                              '<input type="radio" id="option'+i+'" name="'+exerice+'" value="'+
                             HTMLescape(widget.slice(1).join(" ")) +'">'
                               +'<label for="option' + i + '">'+'';
                         break;
                     case "optionText":
                         newstr+=
-                              '<input type="text" id="optiontext'+i+'"  value="'+
+                              '<input type="text" id="optiontext'+i+'" name="'+exerice+'" value="'+
                             HTMLescape(widget.slice(1).join(" ")) +'">'
                               +'<label for="optiontext' + i + '">'+'';
                         break;
                     case "optionNumber":
                          newstr+=
-                              '<input type="number" id="optionNumber'+i+'"  value="'+
+                              '<input type="number" id="optionNumber'+i+'"  name="'+exerice+'" value="'+
                             HTMLescape(widget.slice(1).join(" ")) +'">'
                               +'<label for="optionNumber' + i + '">'+'';
                         break;
@@ -102,6 +105,7 @@ function engineV1(str) {
                         break;
                     case "exercice":
                         newstr += "</details>";
+                        exerice++;
                         break;
                     case "hint":
                         newstr += "</details>";
@@ -126,6 +130,7 @@ function engineV1(str) {
                         break;
                     case "":
                         newstr+="</details>";
+                        exerice++;
                         break;
                 }
             }
@@ -157,6 +162,9 @@ function engineV1(str) {
         }
     }
 
+    $(".checker-button").click(function(){ $(this).parent().children().toArray().forEach((e)=>treatQues(e)); })
+
+    
     return newstr;
 }
 
@@ -201,4 +209,38 @@ function set_sidebar(data){
         newhtml += "</details>";
     }
     $("#list").html( newhtml );
+}
+
+function treatQues(e){
+    switch(e.type){
+        case "checkbox":
+            if(e.checked){
+            if( e.value.trim() == "T" ){
+                e.clasList=""; 
+                e.classList.add("correct");
+            }
+            else{
+                e.clasList=""; 
+                e.classList.add("false");                
+            }
+            }
+            break;
+        case "radio":
+            if(e.checked){
+            if( e.value.trim() == "T" ){
+                e.clasList=""; 
+                e.classList.add("correct");
+            }
+            else{
+                e.clasList=""; 
+                e.classList.add("false");                
+            }
+            }
+            else{
+                if( e.value.trim() == "T" ){
+                    e.clasList=""; 
+                    e.classList.add("missing");
+                }
+            }
+    }
 }
