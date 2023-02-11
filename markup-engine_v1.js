@@ -48,13 +48,52 @@ function engineV1(str) {
                         newstr += "<details class='warning'>"
                         + "<summary class='warningSummary'>" + camelCase(widget.join(" ")) + "</summary>";
                         break;
+                        
+                    case "optionMulti":
+                        newstr+=
+                              '<input type="checkbox" id="optionMulti'+i+'"  value="'+
+                            HTMLescape(widget.slice(1).join(" ")) +'">'
+                              +'<label for="optionMulti' + i + '">'+'';
+                        break;
+                                
+                    case "option":
+                       newstr+=
+                              '<input type="radio" id="option'+i+'"  value="'+
+                            HTMLescape(widget.slice(1).join(" ")) +'">'
+                              +'<label for="option' + i + '">'+'';
+                        break;
+                    case "optionText":
+                        newstr+=
+                              '<input type="text" id="optiontext'+i+'"  value="'+
+                            HTMLescape(widget.slice(1).join(" ")) +'">'
+                              +'<label for="optiontext' + i + '">'+'';
+                        break;
+                    case "optionNumber":
+                         newstr+=
+                              '<input type="number" id="optionNumber'+i+'"  value="'+
+                            HTMLescape(widget.slice(1).join(" ")) +'">'
+                              +'<label for="optionNumber' + i + '">'+'';
+                        break;
+                    case "check":
+                        newstr+=
+                              '<button class="checker-button">'
+                            +(
+                                (widget.slice(1).join(" ").length>0)
+                                  ?
+                                  widget.slice(1).join(" ") 
+                                  :
+                                  'Check Answer'
+                            )
+                            
+                            +'</button>';
+                        break;
                     default:
                         newstr+="";
                 }
             }
             else if(line.startsWith(")))")){
-                widget = line.slice(3).trim();
-                switch(widget){
+                widget = line.slice(3).trim().split(" ");
+                switch(widget[0]){
                     case "note":
                         newstr += "</dev>";
                         break;
@@ -73,8 +112,21 @@ function engineV1(str) {
                     case "warning":
                         newstr += "</details>";
                         break;
-                    default:
+                    case "optionMulti":
+                        newstr+="</label></div>";
+                        break;
+                    case "option":
+                        newstr+="</label></div>";
+                        break;
+                    case "optionText":
+                        newstr+="</label></div>";
+                        break;
+                    case "optionNumber":
+                        newstr+="</label></div>";
+                        break;
+                    case "":
                         newstr+="</details>";
+                        break;
                 }
             }
             else{
