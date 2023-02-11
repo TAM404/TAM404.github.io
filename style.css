@@ -15,7 +15,9 @@ body {
     color: #43b0b5;
 }
 h1{
-  color:#2b54ba;
+  color:#238e45;
+  animation: h1anim 10s infinite;
+  transition:0.5s;
 }
 h2{
   color:#43b0b5;
@@ -79,12 +81,31 @@ h2{
     border-left: 11px solid #ca1955;
      color:#E91E63;
      }
-  90%{border-top: 11px solid #238e45;
+  100%{border-top: 11px solid #238e45;
     border-left: 11px solid #238e45;
       color:#4CAF50;
      }
 }
 
+@keyframes h1anim {
+  0% {
+     color:#238e45;/*2bba3b*/
+     }
+  20%{
+    color:#2b54ba;
+     }
+  40%{color:#1e676b;
+     }
+  60%{
+     color:#c0b029;
+     }
+  80%{
+     color:#b8154c;
+     }
+  90%{
+      color:#238e45;
+     }
+}
 #side_panel_markup #title {
     background: #0a0a0a;
     padding: 10;
@@ -131,10 +152,9 @@ h2{
   position: absolute;
   overflow: scroll;
   margin: 25px;
-  transition: 0.5s;
   border-radius:18px;
   outline: none;
-  
+  transition: 0.5s;
 }
 #markup{
     width: 100%;
