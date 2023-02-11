@@ -52,38 +52,47 @@ h2{
     height: 85%;
     border-radius: 15px;
     width: 23%;
-    border: 11px solid #375601;
-    border-right: 16px solid #0a0a0a;
-    border-bottom: 28px solid #0a0a0a;
+    border: 10px solid #375601;
+    border-right: 15px solid #0a0a0a;
+    border-bottom: 34px solid #0a0a0a;
     transition:1s;
     animation: myanimation 10s infinite;
     color: #4caf50;
 }
 
+/*text-shadow: rgb(0 85 255 / 20%) 0px 0px 8px;*/
+
 @keyframes myanimation {
-  0% {border-top: 11px solid #238e45;
-    border-left: 11px solid #238e45;
+  0% {border-top-color:  #238e45;
+    border-left-color:  #238e45;
      color:#4CAF50;
+      text-shadow: rgb(0 255 12 / 27%) 0px 0px 8px;
      }
-  20%{border-top: 11px solid #2065b1;
-    border-left: 11px solid #2065b1;
+  20%{border-top-color:  #2065b1;
+    border-left-color:  #2065b1;
      color:#3a55ec;
+      text-shadow: rgba(0,85,255,0.27) 0px 0px 8px;
      }
-  40%{border-top: 11px solid #39b0b5;
-    border-left: 11px solid #39b0b5;
+  40%{border-top-color:  #39b0b5;
+    border-left-color:  #39b0b5;
      color:#03A9F4;
+      text-shadow: rgb(0 215 255 / 27%) 0px 0px 8px;
+
      }
-  60%{border-top: 11px solid #9db81b;
-    border-left: 11px solid #9db81b;
+  60%{border-top-color:  #9db81b;
+    border-left-color:  #9db81b;
      color:#FFEB3B;
+      text-shadow: #cddc395e 0px 0px 8px;
      }
-  80%{border-top: 11px solid #ca1955;
-    border-left: 11px solid #ca1955;
+  80%{border-top-color:  #ca1955;
+    border-left-color:  #ca1955;
      color:#E91E63;
+      text-shadow: rgb(255 0 207 / 27%) 0px 0px 8px;
      }
-  100%{border-top: 11px solid #238e45;
-    border-left: 11px solid #238e45;
+  100%{border-top-color:  #238e45;
+    border-left-color: #238e45;
       color:#4CAF50;
+       text-shadow: rgb(0 255 12 / 27%) 0px 0px 8px;
      }
 }
 
@@ -147,7 +156,8 @@ h2{
 
 .editable {
   height: 94%;
-  width: 100%;
+  /* text-shadow: rgb(0 85 255 / 20%) 0px 0px 8px; */
+  width: 93%;
   font-size: 13px;
   font-family: system-ui;
   position: absolute;
@@ -160,7 +170,6 @@ h2{
   word-break: break-all;
 }
 #markup{
-    width: 100%;
     background:#ffffff00;
     color:transparent;
     caret-color: red;
@@ -170,7 +179,6 @@ h2{
 }
 #output{
   color: #c8d2ea;
-  width: 100%;
   background: #090e0e;
 }
 
