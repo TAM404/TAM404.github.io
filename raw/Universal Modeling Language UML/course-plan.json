@@ -1,7 +1,11 @@
 {"name":"Universal Modeling Language UML",
  "sections":[
   {"name":"Diagrammes de cas d'utilisation" , "lessons":[ {"name":"Cour Diagrammes de cas d'utilisation","path":"diag_cas_utilisation"} , {"name":"Exercices","path":"exercices_diag_cas"} ]} ,
-  {"name":"Diagrammes de séquences" , "lessons":[ {"name":"Cour Diagrammes de séquences","path":"diag_seq"} , {"name":"Exercices","path":"exercices_seq"} ]},
+  {"name":"Diagrammes de séquences" , "lessons":[ 
+   {"name":"Cour Diagrammes de séquences Partie 1","path":"diag_seq1"} ,
+   {"name":"Cour Diagrammes de séquences Partie 2","path":"diag_seq2"} ,
+   {"name":"Exercices","path":"exercices_seq"} 
+  ]},
   {"name":"Diagrammes de classes" , "lessons":[ {"name":"Cour Diagrammes de classes","path":"diag_cas_utilisation"} , {"name":"Exercices","path":"exercices_diag_cas"} ]},  
   {"name":"Diagrammes d'objets" , "lessons":[ {"name":"Cour Diagrammes d'objets","path":"diag_obj"} , {"name":"Exercices","path":"exercices_obj_cas"} ]}
  ]}
