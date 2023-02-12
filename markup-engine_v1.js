@@ -161,10 +161,6 @@ function engineV1(str) {
             newstr += "</br>";
         }
     }
-
-    $(".checker-button").click(function(){ $(this).parent().children().toArray().forEach((e)=>treatQues(e)); })
-
-    
     return newstr;
 }
 
@@ -212,35 +208,41 @@ function set_sidebar(data){
 }
 
 function treatQues(e){
+    b=$('label[for="'+e.id+'"]')[0];
     switch(e.type){
-        case "checkbox":
-            if(e.checked){
+        case "radio":
+            b.classList=""; if(e.checked){
             if( e.value.trim() == "T" ){
-                e.clasList=""; 
-                e.classList.add("correct");
+        
+                b.classList.add("correct");
             }
             else{
-                e.clasList=""; 
-                e.classList.add("false");                
+    
+                b.classList.add("false");                
             }
             }
             break;
-        case "radio":
-            if(e.checked){
+        case "checkbox":
+            b.classList=""; if(e.checked){
             if( e.value.trim() == "T" ){
-                e.clasList=""; 
-                e.classList.add("correct");
+            
+                b.classList.add("correct");
             }
             else{
-                e.clasList=""; 
-                e.classList.add("false");                
+             
+                b.classList.add("false");                
             }
             }
             else{
                 if( e.value.trim() == "T" ){
-                    e.clasList=""; 
-                    e.classList.add("missing");
+                   
+                    b.classList.add("missing");
                 }
             }
     }
+}
+
+
+function addListeners(){
+        $(".checker-button").click(function(){ $(this).parent().children().toArray().forEach((e)=>treatQues(e)); })
 }
