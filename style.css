@@ -303,3 +303,16 @@ details summary {
 }
 
 
+.correct{
+  background:#8BC34A;
+}
+
+.false{
+  background:#F44336;
+}
+
+.missing{
+  background:#607D8B;
+}
+
+
