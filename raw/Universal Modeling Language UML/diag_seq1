@@ -103,6 +103,17 @@ op3 (){
 Les signaux sont des objets dont la classe est stéréotypée *^<<signal>>^* et dont les attributs
 (porteurs d'information) correspondent aux paramètres du message.
 ##Création et destruction de lignes de vie
+###Création
+*+* La création d'un objet est matérialisée par une flèche qui pointe sur le sommet d'une ligne
+de vie.
+[[[https://i.imgur.com/brTJHzg.png
+On peut aussi utiliser un message asynchrone ordinaire portant le nom *<<create>>*.
+###Destruction
+La destruction d'un objet est matérialisée par une croix qui marque la n de la ligne de
+vie de l'objet.
+[[[https://i.imgur.com/eF5HXNk.png
+
+
 
 
 
