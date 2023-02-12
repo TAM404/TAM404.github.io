@@ -1,4 +1,4 @@
-#Policy NAT and Twice NAT
+#Policy NAT
 
 *there are times when you want to translate traffic to a certain ^destination^ one way, then translate traffic to a ^different destination^ a completely different way.*
 
