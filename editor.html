@@ -131,9 +131,9 @@ See? it's first processed to be turned into text!
 let outp = document.querySelector('#output');
     
     
-    $('#markup').keyup( ()=> { $("#content").html(  engineV1( main.value  ) );} ) ; 
+    $('#markup').keyup( ()=> { $("#content").html(  engineV1( main.value  ) ); addListeners(); } ) ; 
     $("#content").html(  engineV1( main.value  )) ;
-    
+    addListeners();
 
 // Colors to replace
 keywords=[
