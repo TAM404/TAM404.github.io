@@ -6,7 +6,7 @@ function engineV1(str) {
     for (var i = 0; i < str.length; i++) {
         line = HTMLescape(str[i]);
         if (line.length != 0) {
-            line = escaper(line);
+            line = escaper(line).trim();
 
             if (line.startsWith("#")) {
                 if (line.startsWith("##")) {
