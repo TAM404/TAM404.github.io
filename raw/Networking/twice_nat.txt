@@ -1,1 +1,29 @@
+#Twice NAT
+In each example of the traditional four types of NAT we’ve discussed in this article series, only one “side” of the packet was being modified: the Source of the outbound packet or the Destination of the inbound packet.
+
+Moreover, in the prior section we discussed *Policy NAT*: making a NAT decision based upon matching both the source and destination of traffic. However, even in a Policy NAT, once the decision was made, only one side of the packet was being modified (source address).
+
+There are occasions where you need to translate both sides of the packet – this type of translation is referred to as a *Twice NAT*. The term comes from the fact that you are *performing NAT twice: once on the source of the packet and another time on the destination of the packet.*
+
+##Changing the Destination with Twice NAT
+At the core of it, a *Twice NAT is a type of NAT where both the Source and Destination of the packet will be translated*. Take this scenario as an example.
+
+You are in charge of a Router with hosts on a private network (*10.6.6.0/24*) that have chosen to use Google’s Public DNS Resolving Server (*8.8.8.8*). However, company policy states DNS requests must be made using the Corporate DNS server (*32.9.1.8*). One option is to manually verify every user’s DNS configuration, but that does not scale. Instead, another option would be to translate any outbound requests to *8.8.8.8* into a request for *32.9.1.8*.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/twice-nat-dns-1024x235.png
+
+Notice the configuration is making a decision based upon matching a *Source* of 10.6.6.0/24 and a *Destination* of 8.8.8.8 – this makes the configuration a *^Policy NAT^*. Furthermore, the configuration is translating the source using a Dynamic PAT, and the destination using a Static NAT – this makes the configuration a *^Twice NAT^*, since we are doing two instances of address translation.
+
+(((gray
+The internal host is still configured to use Google’s DNS servers, but their traffic is automatically being redirected to the corporate DNS servers. The internal host will not know that anything is different, and unless they go out of their way to validate the DNS responses, they will have no idea that the response is coming from the corporate DNS server and not Google’s DNS server.
+)))gray
+
+
+
+
+
+
+
+
+
 
