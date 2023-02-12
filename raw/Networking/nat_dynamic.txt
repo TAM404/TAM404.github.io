@@ -1,1 +1,42 @@
+#Dynamic NAT
+* Dynamic NAT implies a translation of just the IP address, where the post-translation attributes are selected by the router.*
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-nat-outbound-1024x316.png
+
+
+In the image we have a Router with an Inside network *(10.7.7.0/24)* with four hosts *(.71, .72, .73, .74)*. The Router is configured with a Dynamic NAT which states the hosts on the Inside network can share three public IP addresses: *54.5.4.1*, *54.5.4.2*, and *54.5.4.3.*
+
+*1-* Host A (*10.7.7.71*) initiates a connection to *86.8.6.6*, and the Router assigns Host A the public IP 54.5.4.1.
+*2-* Host B (*10.7.7.72*) initiates a connection to 86.8.6.7, and the Router assigns Host B the public IP *54.5.4.2*.
+*3-* Host C (*10.7.7.73*) initiates a connection to 86.8.6.8, and the Router assigns Host C the public IP *54.5.4.3*.
+
+At this point, all the shared IP addresses have been used. Because of this, when Host D (*10.7.7.74*) attempts to initiate a connection to *86.8.6.9*, the packet is dropped because there are no available public IP addresses the router can use to translate Host D’s private IP address.
+
+*When Host A is finished with its connection, the IP address it was assigned (54.5.4.1) becomes available again for the next internal host to use:*
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-nat-outbound-4th-1024x316.png
+
+Here, we see Host D can now initiate a connection through the Dynamic NAT and receives the next available IP address.
+
+(((gray
+since this is a Dynamic NAT, only the IP address changed – the source port picked by the internal host remains the source port in the packet after translation.
+)))gray
+
+#Benefits and Use Cases for Dynamic NAT
+
+The main use case for a Dynamic NAT is that while the translation is active it has the benefit of being *bidirectional*, just like a *Static NAT*.
+
+For example, in the images above, Host B (10.7.7.72) has an active connection and was assigned the public IP address 54.5.4.2. So long as the connection is active in the Router’s translation able, any host on the Internet can send packets to 54.5.4.2 and they will reach Host B.
+
+In a way, a Dynamic NAT assigns a temporary “dedicated IP” to each internal host (so long as IP addresses are available). Or, said another way, a Dynamic NAT creates a *temporary Static NAT*.
+
+(((gray
+There are two primary use cases for Dynamic NAT. The first is to allow for protocols which create a secondary, dynamic connection back to the client. The second is if you need a Bidirectional mapping of Private IPs to Public IPs, but don’t particularly care about the explicit mapping between the two.
+)))gray
+
+(((note
+It should be noted that often when discussing address translation people will use the term Dynamic NAT when they actually mean Dynamic PAT. For the reasons  like *connection , address inconsistency* .  *Dynamic NAT is rarely used in production*. If a single IP address is shared among many internal users, and if the port number changes, than it is indeed a Dynamic PAT.
+)))note
+
+
 
