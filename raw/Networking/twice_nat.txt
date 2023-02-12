@@ -1,4 +1,5 @@
 #Twice NAT
+*Performing NAT twice: once on the source of the packet and another time on the destination of the packet.*
 In each example of the traditional four types of NAT we’ve discussed in this article series, only one “side” of the packet was being modified: the Source of the outbound packet or the Destination of the inbound packet.
 
 Moreover, in the prior section we discussed *Policy NAT*: making a NAT decision based upon matching both the source and destination of traffic. However, even in a Policy NAT, once the decision was made, only one side of the packet was being modified (source address).
