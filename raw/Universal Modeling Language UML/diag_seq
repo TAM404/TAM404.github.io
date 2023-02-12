@@ -1,0 +1,118 @@
+#Diagrammes de séquences
+
+##Objectif des diagrammes de séquence
+
+*+* *Les diagrammes de cas d'utilisation* modélisent à ^*QUOI*^ sert le système, en organisant les
+interactions possibles avec les acteurs.
+*+* *Les diagrammes de classes* permettent de spécifier la structure et les liens entre les objets
+dont le système est composé : ils spécifie ^*QUI*^ sera à l'oeuvre dans le système pour réaliser
+les fonctionnalités décrites par les diagrammes de cas d'utilisation.
+
+(((note 
+*+* *Les diagrammes de séquences* permettent de décrire *^COMMENT^* les éléments du système interagissent entre eux et avec les acteurs.
+*+* Les objets au coeur d'un système interagissent en s'échangent des messages.
+*+* Les acteurs interagissent avec le système au moyen d'*IHM* (Interfaces Homme-Machine).
+)))note
+##Exemple d'interaction
+### Cas d'utilisation :
+[[[https://i.imgur.com/fmf3jEb.png
+
+
+###Diagramme de séquences correspondant:
+[[[https://i.imgur.com/hfWkLRn.png
+
+
+###Opérations nécessaires dans le diagramme de classes :
+[[[https://i.imgur.com/d2Cmd8c.png
+
+
+##Composants de diagramme de sequences
+[[[https://i.imgur.com/JWnN6af.png
+###1.Ligne de vie
+*+* *Une ligne* de vie représente un participant à une interaction (objet ou acteur).
+^nomLigneDeVie [ selecteur ]: nomClasseOuActeur^
+
+(((note
+*+* Dans le cas d'une collection de participants, un sélecteur permet de choisir un objet parmi
+n (par exemple objets[2]).
+)))note
+
+###2.Messages
+*+* Les principales informations contenues dans un diagramme de séquence sont les messages
+échangés entre les lignes de vie, présentés dans un ordre chronologique.
+*+* Un message définit une communication particulière entre des lignes de vie (objets ou
+acteurs).
+*+*La réception des messages provoque *une période d'activité* (rectangle vertical sur la ligne de vie) marquant le traitement du message (spécification d'exécution dans le cas d'un appel
+de méthode).
+(((note
+*-* *Plusieurs types de messages existent, dont les plus courants :*
+*-* l'envoi d'un signal ;
+*-* l'invocation d'une opération (appel de méthode) ;
+*-* la création ou la destruction d'un objet.
+)))note
+
+##Principaux types de messages
+###Un message synchrone
+*Un message synchrone* bloque l'expéditeur jusqu'à la réponse du destinataire. Le flot de
+contrôle passe de l'émetteur au récepteur.
+*-* Typiquement : appel de méthode
+*+* Si un objet A invoque une méthode d'un objet B, A reste bloqué tant que B n'a pas
+terminé.
+[[[https://i.imgur.com/HsFZcPP.png
+
+On peut associer aux messages d'appel de méthode un message de retour (en pointillés)
+marquant la reprise du contrôle par l'objet émetteur du message synchrone
+
+[[[https://i.imgur.com/LN3Zw0D.png
+###Un message asynchrone
+Un message asynchrone n'est pas bloquant pour l'expéditeur. Le message envoyé peut
+être pris en compte par le récepteur à tout moment ou ignoré.
+*+* Typiquement : envoi de signal.
+[[[https://i.imgur.com/n8pKI4c.png
+##Correspondance messages / opérations
+ *-* *Les messages synchrones* correspondent à des opérations dans le diagramme de classes
+*-* Envoyer un message et attendre la réponse pour poursuivre son activité revient à invoquer
+une méthode et attendre le retour pour poursuivre ses traitements.
+[[[https://i.imgur.com/ZOCba4I.png
+###implantation des messages synchrones
+
+[[[https://i.imgur.com/XLx8Mck.png
+(((gray
+*class B {*
+*C* c ;
+op1 ( p : Type ){
+c . op2 ( p );
+c . op3 ();
+}
+*}*
+*class C {*
+op2 ( p : Type ){
+*...*
+}
+op3 (){
+*...*
+}
+*}*
+)))gray
+
+##Correspondance messages / signaux
+[[[https://i.imgur.com/QDpipxn.png
+
+
+*+* Les *messages asynchrones* correspondent à des signaux dans le *diagramme de classes*.
+Les signaux sont des objets dont la classe est stéréotypée *^<<signal>>^* et dont les attributs
+(porteurs d'information) correspondent aux paramètres du message.
+##Création et destruction de lignes de vie
+
+
+
+
+
+
+
+
+
+
+
+
+
