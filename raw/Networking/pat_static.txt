@@ -1,1 +1,55 @@
+#Static PAT
+
+##Multiple Servers using one Public IP Address
+
+One specific use case for *Static PAT* is to use a single Public IP address to host multiple services on different internal servers. This is in contrast with a *Static NAT* which would only allow you to use a single Public IP address to host multiple services on the same server.
+
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/static-pat-initial-1024x205.png
+
+
+Two hosts somewhere on the Internet both make a request to the same IP address (73.8.2.44) – one request using HTTP (port 80), one request using HTTPS (port 443). When their packets arrive on the Router, they get translated and sent to two different servers for processing.
+
+*The single Public IP address (73.8.2.44) is hosting two services (HTTP and HTTPS) served by two different internal servers (10.4.4.41 and 10.4.4.42).*
+
+#Non-Standard Ports
+The same illustration above also provides yet another use case for Static PAT – the 10.4.4.41 server is hosting HTTP traffic on a non-standard port (8080).
+(((gray
+Without the port translation, hosts on the Internet would have to specify the non-standard port in their web browser by visiting “www.site.com:8080”. Instead, with the Static PAT, the users can just type “www.site.com” (which implicitly assumes the standard web port of 80) and the router automatically translates the packet to port 8080 instead.
+)))gray
+
+This could work in reverse as well. Where a *non-standard port* is used on the outside, but a *standard port* is used on the inside server.
+(((gray
+For example, the standard port associated with SSH traffic is TCP/22. Malicious users routinely scan the entire IPv4 address space for servers listening on port TCP/22 to look for all SSH servers in hopes of finding some with weak passwords. A common strategy is to host SSH on a non-standard port in an effort to hide your SSH server from this mass scanning that occurs on port 22.
+)))gray
+
+##Bidrectional
+Once again, since the pre-translation IP:Port and post-translation IP:Port in a Static PAT are explicitly defined, the initial packet could have come from either the Internet hosts or the inside hosts. Therefore, a *Static PAT translation is bidirectional*.
+
+##Selectively Punching Holes
+
+With a Static PAT, if you only create a translation for port 80 and 443, only those paths through the router will exist. Protecting your internal servers from unwanted access attempts.
+
+(((note
+In this context, Static PAT is sometimes referred to as Port Forwarding: a specific port on an external address is forwarded to a specific port on an internal address.
+)))note
+
+Admittedly, *the same effect can be attained by creating a Static NAT* and applying an *access-list* or security policy to only allow the desired traffic through. As such, this is a use-case for Static PAT, but by no means is it the only way to attain the same effect.
+
+(((note
+The most common usage of selectively punching holes is to create a bidirectional path through unidirectional NAT translation. This will make more sense when we discuss *Dynamic PAT* in the next article.
+)))note
+
+
+
+
+
+
+
+
+
+
+
+
+
 
