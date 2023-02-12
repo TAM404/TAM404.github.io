@@ -1,1 +1,98 @@
+#Dynamic PAT
+ a *Dynamic PAT* implies a translation of the IP address and Port, where the post-translation attributes are selected by the router.
+
+(((gray
+*Dynamic PAT* is the most common of the types of address translation we will discuss in this article series. Dynamic PAT is used any time multiple internal hosts need to share a single public IP address.
+
+On a small scale, this is exactly what your home Wi-Fi router does. You may have 5-25 unique devices on your home network, each of them with their own private IP address. But when any of them try to speak with the Internet, they all share the single, unique public IP address assigned to your router.
+)))gray
+
+(((note
+Of all the types of Network Address Translation, a *Dynamic PAT is the most conducive to conserving IP address space.* It is not uncommon to have hundreds of internal hosts sharing one public IP address.
+)))note
+##Packet Flow – Outbound Traffic
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-pat-initial-1024x329.png
+
+
+The Router is serving as our translation device, and is configured with a Dynamic PAT which translates any IP address on the Inside network ^(10.6.6.0/24)^ to the IP address ^32.8.2.66^. When packets are translated, *the Router makes note of the attributes of the original and translated packet in the Router’s Translation Table*.
+Hosts A, B, and C each send a packet. They each use their own, unique Private IP address as the Source IP address, and they each randomly select a Source Port.
+
+There are approximately ^60,000^ port numbers that can be chosen, and it is entirely feasible for two different hosts to randomly select the same source port (as is the case with Host B and Host C above).
+
+In our example above, upon reception of each packet, the Router translates the source IP address of each packet to 32.8.2.66 (as explicitly configured), and *randomly selects a new, unique source port number for each packet* (7777, 8888, and 9999). The Router translated the port (PAT) and the Router selected the new source port (Dynamic).
+
+Each specific mapping is *recorded in the Router’s Translation Table*. This translation table will be used to “un-translate” the response packets when they return from the Internet.
+
+#Packet Flow – Response Traffic
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-pat-return-1024x329.png
+
+When the packets arrive on the Router, it matches them against the translation table to know how to “un-translate” the packet to their original attributes to get them to the appropriate host:
+
+The response packet sent to ^32.8.2.66:7777^ is forwarded to Host ^A (10.6.6.61:2222)^
+The response packet sent to ^32.8.2.66:8888^ is forwarded to Host ^B (10.6.6.62:3333)^
+The response packet sent to ^32.8.2.66:9999^ is forwarded to Host ^C (10.6.6.63:3333)^
+
+#Why was the source port re-randomized?
+Had the router not re-randomized the source port number, the outbound post-translation packets from Host B and Host C would have looked identical – they both would have had a Source IP of ^32.8.2.66^ and a Source port of ^3333^.
+
+Which means the response traffic for both packets from the ^28.2.4.6^ server would have looked identical.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-pat-non-random-src-port-v5.png
+
+
+When the identical packets arrive, the router would have no way of distinguishing which packet should be untranslated to Host B (10.6.6.62) or which should be translated to Host C (10.6.6.63). The router would have no choice but to drop both packets.
+(((note
+*Dynamic PAT* must set different *IP:PORT * Pairs in each connection to distinguish between them
+)))note
+
+#Unidirectional
+One of the side effects of multiple hosts sharing a single IP address and a random port is that the  translation only works in *one direction*.
+
+In the example above, Hosts A, B, and C *initiated* some traffic to external hosts. When the external hosts responded, *the Router had entries in its translation table* which allowed it to “un-translate” the packets and send them to the appropriate hosts.
+
+If, however, a new connection was initiated from an *external host* and destined to the shared IP address,* the router will have no way of knowing which internal host was the intended target of the packet.*
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/dynamic-pat-failed-inbound-packet-1024x329.png
+
+
+(((note
+ a Dynamic PAT only succeeds if the internal host sends the first packet.
+ 
+)))note
+
+(((gray
+If there is a need for certain ports to be accessible externally through a shared IP address, this can be achieved by using a *Static PAT* to selectively *punch holes* through the shared address of a Dynamic PAT.
+)))gray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
