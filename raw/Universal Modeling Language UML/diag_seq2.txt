@@ -1,0 +1,18 @@
+#Diagrammes de séquences, Partie 2
+##Plus sur les messages
+
+###Messages complets, perdus et trouvés
+Un *message complet* est tel que les événements d'envoi et de réception sont connus.
+*+* Un message complet est représenté par une flèche partant d'une ligne de vie et arrivant
+à une autre ligne de vie.
+Un *message perdu* est tel que l'événement d'envoi est connu, mais pas l'événement de
+réception.
+[[[https://i.imgur.com/Hm9MRBj.png
+*-* La flèche part d'une ligne de vie mais arrive sur un cercle indépendant marquant la
+méconnaissance du destinataire.
+*+* *Exemple :* broadcast.
+
+Un *message trouvé* est tel que l'événement de réception est connu, mais pas l'événement
+d'émission.
+[[[https://i.imgur.com/wLJL3iw.png
+##Syntaxe des messages
