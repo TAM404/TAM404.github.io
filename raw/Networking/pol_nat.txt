@@ -6,9 +6,12 @@ In such cases, when you need to conditionally translate traffic based upon the *
 
 *A Policy NAT is simply any of the four NAT types we discussed prior in this article series, except the NAT decision requires matching both the Source and Destination of a packet.*
 
+
 *Example :*
 [[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/policy-dynamic-pat-1024x251.png
 
+
+*Policy NAT*: making a NAT decision based upon matching both the source and destination of traffic.
 
 The matching depends on both the^ destination^ and the ^source^
 By contrast, every example of address translation thus far made a NAT decision based upon *only* the *^source of the packet.^*
