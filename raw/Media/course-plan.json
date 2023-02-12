@@ -1,0 +1,7 @@
+{"name":"Multimedia",
+ "sections":[
+ {"name":"Le son" , "lessons":[ 
+   {"name":"Le son","path":"le-son"} ,
+   {"name":"exercices","path":"le-son-exercice"} 
+ ]}]}
+   
