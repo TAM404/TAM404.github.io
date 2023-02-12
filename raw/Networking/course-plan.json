@@ -1,11 +1,11 @@
 {"name":"Networking",
  "sections":[
  {"name":"NAT" , "lessons":[ 
-   {"name":"NAT terinology","path":"nat-term"} ,
+   {"name":"NAT terinology","path":"nat_term"} ,
    {"name":"Static NAT","path":"nat_static"},
    {"name":"Static PAT","path":"pat_static"},
    {"name":"Dynamic NAT","path":"nat_dynamic"},
    {"name":"Dynamic PAT","path":"pat_dynamic"},
-   {"name":"Cisco NAT Terminology","path":"cisco-term"},
-   {"name":"Cisco NAT Configuration","path":"cisco-config"}
+   {"name":"Cisco NAT Terminology","path":"cisco_term"},
+   {"name":"Cisco NAT Configuration","path":"cisco_config"}
  ]}]}
