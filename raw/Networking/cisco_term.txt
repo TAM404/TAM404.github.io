@@ -1,1 +1,25 @@
+#Cisco NAT terminology
+If you’ve made it here, then at this point you should have a solid understanding of each of the four types of translation that can exist: *Static NAT, Static PAT, Dynamic PAT, and Dynamic NAT*. Moreover, you have an understanding of *Policy NAT *and* Twice NAT,* which are simply two different ways of implementing the four types of NAT.
+
+*^Cisco^* has created some NAT terminology which explicitly refer to the IP addresses and/or ports involved in Network Address Translation (NAT).
+*Cisco has designated some NAT terminology which explicitly reference a set of addresses with absolute certainty and ^no ambiguity^, that apply to all traffic directions.*
+
+^*+*^ *Inside Local* – a host that physically exists on the Inside network, as seen from the perspective of the Inside network
+^*+*^ *Inside Global* – a host that physically exists on the Inside network, as seen from the perspective of the Outside network
+^*+*^ *Outside Local* – a host that physically exists on the Outside network, as seen from the perspective of the Inside network
+^*+*^ *Outside Global* – a host that physically exists on the Outside network, as seen from the perspective of the Outside network
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/cisco-terminology.gif
+
+
+*Inside* vs *Outside* refer to the physical location of the real owner of the address in question
+*Local* vs *Global* refer to perspective you are viewing the address from, in relationship to the NAT device
+
+The attributes *10.1.1.11:3333* refers to a host on ^*the Inside network*^, and is what that host appears as when viewed from the *^Local perspective^*.
+ Hence, this is the ^* Inside Local address*^.
+
+
+
+
+
 
