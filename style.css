@@ -21,6 +21,8 @@ h1{
 }
 h2{
   color:#43b0b5;
+  animation: h1anim 10s infinite;
+  transition:0.5s;
 }
 #padding_top {
     display: block;
