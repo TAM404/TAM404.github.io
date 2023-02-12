@@ -8,7 +8,7 @@
    {"name":"Dynamic NAT","path":"nat_dynamic"},
    {"name":"Policy NAT","path":"pol_nat"},
   {"name":"Twice NAT","path":"twice_nat"}
- ]}
+ ]},
   {"name":"Configuring NAT" , "lessons":[ 
     {"name":"Cisco NAT Terminology","path":"cisco_term"},
    {"name":"Cisco NAT Configuration","path":"cisco_config"}
