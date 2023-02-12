@@ -1,1 +1,67 @@
+#NAT Terminology
+
+ Network Address Translation, or NAT, is a process that involves translating Private IP addresses into Public IP addresses. There are different operations within NAT and understanding each of them requires understanding NAT terminology.
+##NAT vs PAT
+*N*etwork *A*ddress *T*ranslation *NAT* and *P*ort *A*ddress *T*ranslation differ by modifying different headers in a data packet.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/nat-headers-600x210.png
+
+*Network Address Translation, or NAT, implies a translation of an IP address to another IP address.*
+NAT in and of itself only affects the L3 header, which in today’s world will be the IPv4 header. While NAT can modify an IPv6 header as well, it really isn’t common, as IPv6 was created in such a way to avoid the need for NAT altogether.
+*Port Address Translation, or PAT, implies a translation of an IP address and Port to another IP address and Port.*
+PAT affects both the L3 (Layer 3) header and the L4 header. Which means the IPv4 Header, as well as either the TCP or UDP header, will be modified.
+
+(((gray
+You could consider PAT as a subset of NAT (i.e., Network Address Translation along with a Port translation), but there isn’t really a common use case for a Port translation only without an accompanying IP address translation as well. Therefore, nearly every instance of a PAT will also typically include an IP address translation as well.
+)))gray
+
+^In summary, a NAT modifies only the L3 header, and a PAT modifies both the L3 and L4 header. Or, said another way, a NAT modifies only the IP, and a PAT modifies both the IP and Port.^
+##Static vs Dynamic
+Both a NAT and a PAT can exist in two forms: *Static* or *Dynamic*. These two terms designate whether the post-translation attributes of the packet are explicitly defined by the administrator or determined dynamically by the translation device.
+
+In either case, the pre-translation attributes are explicitly defined. This is how the NAT device knows which packets should be translated in the first place.
+
+To help define the terms, we will look at an example of a Static translation and Dynamic translation below. The examples will use a Router as a NAT device, but many other devices can also perform address translation (Firewalls, Load Balancers, etc).
+
+##Static Translations
+
+In a *Static *translation, the *post-translation* attributes are explicitly defined by the administrator (*IP* address for a NAT, or *IP:Port* for a PAT). A Static translation implies the pre-translation IP or IP:Port will permanently map to the same, constant post-translation *IP* or *IP:Port*.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/nat-terminology-static-nat.gif
+
+
+In this example, only the IP address is changing (NAT), and the mapping between pre-translation and post-translation is permanent (Static) – the IP address ^10.1.1.11^ will always be translated to ^73.8.2.11^ (and vice versa). Hence, this is an example of a ^*Static NAT*^.
+(((gray
+A Static mapping is sometimes referred to as a *One-to-One translation* – implying that in a Static translation, a single IP or IP:Port can only ever appear as another single IP or IP:Port.
+)))gray
+
+##Dynamic Translations
+
+In a Dynamic translation,* the post-translation attributes are selected by the router at the time that the packet is received* – the final post-translation attributes are not permanently mapped to pre-translation attributes.
+
+Of course, the scope of post-translation attributes must be defined by the administrator, but the exact mapping is determined by the device, at the time the packet is received.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/nat-terminology-dynamic-pat.gif
+
+In this example, both the IP address and the Port are changing (which makes this a PAT), and the mapping between the pre-translation and post-translation is not explicitly defined by the administrator (which makes this a Dynamic translation). Hence, this is an example of a *Dynamic PAT*.
+
+When the packet from ^10.1.1.11^ arrived on the Router, the Router chose a new source port of ^6667^. When the packet from ^10.1.1.22^ arrived on the Router, the Router chose a new source port of ^6668^. *Both hosts are sharing the public IP address ^73.8.2.66^.*
+(((gray
+There is no guarantee that the next connections initiated by either host will have port numbers of 6667 or 6668 – they will very likely be something else randomly chosen by the Router, at the time the next packet is received by the Router.
+)))gray
+
+A Dynamic mapping is sometimes referred to as a *One-to-Many* or *Many-to-One translation* – implying that in a Dynamic translation, many addresses can appear as one, or one address can appear as many.
+Both Static NAT and the Dynamic PAT will be explored in more detail in later articles in this series.
+
+
+
+
+
+
+
+
+
+
+
+
 
