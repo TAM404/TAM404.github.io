@@ -1,0 +1,91 @@
+#SON
+##Caractéristiques d'un son
+Un son est défini par 3 paramètres : 
+
+*+* *Hauteur* : frequence. 
+*+* * Volume* : intensité sonore , *amplitude* . 
+*+* *Timbre* : qualité , characterisation
+
+###Sound pressure level (SPL)
+(((gray
+Formula:
+*^SPL = 20 \* log( P / P0 )^*
+*Where:*
+*SPL*	=	sound pressure level in decibels (re 2 × 10−5 Fa)
+*p*	=	sound pressure of the noise (Pa)
+*Po*	=	reference pressure (= 2 × 10\^−5 Pa)
+)))gray
+
+###theoreme de shannon
+(((gray
+*F* > 2\**F*max
+*F* > 2 \*(*largeur de bonde**)
+)))gray
+
+###Qualité
+*+* *Frequence de echantillonnage:*
+*-* Qualité telephonique:^ 8kHz^
+*-* Qualité CD : ^44.1kHz ^
+*+* *le nombre de bits par echnatillon:*
+*-* ^8^ bits (qualité mediocre) 
+*-* ^16^ bits (qualité CD) 
+*+* *Le nomre de canaux: *
+*-* 1 canal : son mono 
+*-* 2 canaux : son stereophonique 
+*-* 4 canaux: son quadriphonique
+
+##Formats de stockage
+*+* Les formats numériques: *WAV, AIFF, MP3*, …
+*+* Les formats musicaux :* MIDI *
+
+##WAV
+• Respecte la norme *R.I.F.F.* (Resource Interchange File Format) : formé de blocs 
+(CHUNK) hiérarchisée : 
+• Un *CHUNK RIFF* d'en-tête (*^44^* octets) indiquant la taille du fichier et son type (WAV). 
+•Un *CHUNK FMT* indiquant descripteur le type de format WAV utilisé 
+(PCMWAVEFORMAT de Microsoft,…) et les paramètres de compression (nombre 
+d’échatillon/sec; nombre de voies,...) 
+•Un *CHUNK DATA*: contenant les échantillons ceux-ci sont alignés les uns après les 
+autres dans l’ordre où ils arrivent dans le temps
+
+[[[https://www.researchgate.net/publication/273630623/figure/fig1/AS:391963007307778@1470462671722/The-structure-of-wav-file-format.png
+
+
+##AIFF
+ Équivalent Macintosh du format *WAV*.
+
+##MP3
+• *MP3* (MPEG Audio layer 3) : format de compression de données audio avec perte
+• Compresse à un taux de *^1:12^* le format *WAV*
+
+*Compression des signaux selon quatre modes :*
+ 
+*+* *stereo*: les voies G et D sont codées de manières indépendante.
+*+* *joint-stereo*: exploitation de la redondance entre les voies G et D afin de réduire le débit.
+*+* *dual-channel*: deux voies sont indépendantes, par exemple le son bilingue.
+*+* *mono*: une seule voie son.
+
+codage on huffman
+
+##Codage de Huffman
+trés bon video pour comprendre le codage de huffman , et pourquoi il foncitionne (en englais)
+*^https://www.youtube.com/watch?v=B3y0RsVCyrw^*
+
+##MIDI
+Le format *MIDI* (Musical Instrument Digital Interface). 
+*+* *16 canaux *: 16 instruments peuvent jouer en même 
+temps. 
+*-* Indications sur quelle note jouer, sur quel instrument, à 
+quel volume, etc. 
+
+*+* Faible volume d'information requis (de ^200^ a *^1000^* fois moins que le signal audio en qualité CD) 
+
+*Example*:
+*-* Gain de place : 2 minute : 
+*-* Format MIDI : 80 Ko. 
+*-* Format WAV : 20 Mo (qualité CD).
+
+
+
+
+
