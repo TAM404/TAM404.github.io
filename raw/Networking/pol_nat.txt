@@ -1,1 +1,30 @@
+#Policy NAT and Twice NAT
+
+*there are times when you want to translate traffic to a certain ^destination^ one way, then translate traffic to a ^different destination^ a completely different way.*
+
+In such cases, when you need to conditionally translate traffic based upon the *destination* of the packet, you will need to use what is known as a *Policy NAT*.
+
+*A Policy NAT is simply any of the four NAT types we discussed prior in this article series, except the NAT decision requires matching both the Source and Destination of a packet.*
+
+*Example :*
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/policy-dynamic-pat-1024x251.png
+
+
+The matching depends on both the^ destination^ and the ^source^
+By contrast, every example of address translation thus far made a NAT decision based upon *only* the *^source of the packet.^*
+
+(((gray
+The specific illustration immediately above was an example of a *Policy Dynamic PAT* – A translation decision based upon matching the source and destination of the packet (Policy), with the router determining the attributes after translation (Dynamic), which translated the source IP address and port (PAT).
+)))gray
+
+
+
+
+
+
+
+
+
+
+
 
