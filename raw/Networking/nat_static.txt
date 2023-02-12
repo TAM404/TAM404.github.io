@@ -1,1 +1,50 @@
+#Static NAT
+ a Static NAT implies a translation of just the IP address, where the post-translation IP addresses are explicitly defined.
+##Making Internal Resources Accessible
+The typical use case for a Static NAT is for a Server on a Private IPv4 network to be reached externally from the Internet.
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/static-nat-failed-1024x186.png
+In this example, the Internet host ^54.4.5.9^ needs to connect to the web server on the Inside network. The web server is on an internal network and is therefore configured with the Private IP address of ^10.2.2.33.^
+
+If the Internet host attempts to send a packet to the IP address of the server (^10.2.2.33^), the packet will be dropped when it reaches the Internet. Recall, *Private IP addresses are not routable on the Internet*.
+
+*For a host on the Internet to reach the server, a Static NAT must be configured on the NAT device*. In our example, the Router in front of the ^10.2.2.0/24^ network will be the NAT device, and we will configure it to translate the private IP address ^10.2.2.33^ to the Public IP address ^73.8.2.33^.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/static-nat-success-1024x245.png
+
+Now, the Internet host can send a packet to the correlating Public IP address (^73.8.2.33^) which will be routed through the Internet to the NAT device. The Router (acting as our NAT device) will then translate the packet to the Server’s private IP address (^10.2.2.33^). When the web server responds, the router will un-translate the packet back to the original IP address of ^73.8.2.33^.
+
+The Static NAT allowed the internal host with the private IP address to be accessed by an external host.
+
+With that in mind, there are three additional points that must be made regarding Static NAT.
+
+(((note
+*Conserving IP Addresses*
+If you had 30 servers on the Inside network, each with their own Private IP address, and you wanted to use Static NAT, then you would need 30 unique Public IP addresses for the translations.
+
+We discussed earlier that the original intent of Network Address Translation was to conserve Public IPv4 addresses. However, as you can see, a *Static NAT does not actually conserve any Public IPv4 addresses*. Instead, the primary purpose of a Static NAT is to *expose a server with a Private IP address to the public Internet.*
+
+)))note
+
+###Bidirectional
+Finally, in the example above, the initial packet was sent from the Internet host. But it could have easily been sent from the server on the Inside network. Regardless of who initiated the connection, the Static NAT would cause the Source of the outbound packets or the Destination of the inbound packets to be translated.
+
+The key point is that a Static NAT translation is bidirectional. Whether the internal host or the external host sent the first packet, it would “pass through” the Static NAT. There are variations of NAT which we will discuss later in this article series where the translation will not be bidirectional.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
