@@ -6,6 +6,7 @@
    {"name":"Static PAT","path":"pat_static"},
    {"name":"Dynamic PAT","path":"pat_dynamic"},
    {"name":"Dynamic NAT","path":"nat_dynamic"},
+   {"name":"Policy NAT and Twice NAT","path":"pol_nat"},
    {"name":"Cisco NAT Terminology","path":"cisco_term"},
    {"name":"Cisco NAT Configuration","path":"cisco_config"}
  ]}]}
