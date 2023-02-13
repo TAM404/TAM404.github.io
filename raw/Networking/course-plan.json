@@ -11,7 +11,8 @@
  ]},
   {"name":"Configuring NAT" , "lessons":[ 
     {"name":"Cisco NAT Terminology","path":"cisco_term"},
-   {"name":"Cisco NAT Configuration","path":"cisco_config"}
+   {"name":"Cisco NAT Configuration Static","path":"cisco_config1"},
+   {"name":"Cisco NAT Configuration Dynamic","path":"cisco_config2"}
  ]}
 
  
