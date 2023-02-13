@@ -1,0 +1,65 @@
+#Cisco NAT Configuration
+
+
+##Designating Inside and Outside interfaces
+The first step to configuring NAT on any Cisco IOS router is designating which interfaces should be considered *“Inside”* and which should be considered *“Outside”*.
+
+On Cisco Routers, the designation uses the commands *^ip nat outside^* and *^ip nat inside^*:
+
+(((gray
+interface fa0/0
+ * ip nat outside*
+
+interface fa0/1
+ * ip nat inside*
+
+interface fa0/2
+ * ip nat inside*
+)))gray
+
+#Static NAT
+
+A Static NAT is a translation in which *only the IP addresses are being modified*, and the mapping between pre-translation and post-translation IP addresses is explicitly defined.
+
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/static-nat-success.png
+
+
+To configure Static NAT on a Cisco IOS router to match the translation depicted above, first *designate the Inside and Outside interfaces*, then apply the following command:
+(((gray
+*ip nat  inside source  static  10.2.2.33  73.8.2.33*
+)))gray
+
+*-* *Syntax:*
+
+(((gray
+*ip nat  inside source  static  ^<Inside Local IP>^  ^<Inside Global IP>^*
+)))gray
+
+#Static PAT
+
+A Static PAT is a translation in which *the IP Addresses and Port numbers are being modified*, and the mapping between pre-translation and post-translation attributes is explicitly defined
+[[[https://www.practicalnetworking.net/wp-content/uploads/2017/10/static-pat-response.png
+
+To configure Static PAT on a Cisco router to match the translation depicted above, *first designate the Inside and Outside interfaces*, then apply the following commands:
+
+(((gray
+*ip nat  inside source  static  tcp  ^10.4.4.41^ 8080  ^73.8.2.44^ 80  extendable*
+*ip nat  inside source  static  tcp  ^10.4.4.42^ 443  ^73.8.2.44^ 443  extendable*
+)))gray
+
+*-* *Syntax:*
+
+(((gray
+*ip nat  inside source  static^ <protocol> <Inside Local IP:Port> <Inside Global IP:Port> ^ extendable*
+)))gray
+
+*inside source	:* Translate the Source IP of packets arriving on interfaces labeled with ip nat inside.
+*<protocol>:*	Designates which protocol is being translated, typically this will be TCP or UDP.
+*extendable :*	Allow a single global address to be mapped to multiple local address.
+
+
+
+
+
+
+
