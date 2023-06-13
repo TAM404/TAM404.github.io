@@ -1,0 +1,47 @@
+#String Matching
+String matching is heavily used  in *Search engines*, *DNA* sequencing and even text editors and code *IDEs*.
+thus we need as efficient of algorithms as we can.
+
+##Naive approach
+one way to search for a string *P* inside of a bigger string *T* is to loop through each position in *T* or to be more precise from position *0* to *T.size() - P.size()*  ) and check if there's a match of *P* starting from that position.
+*for example :*
+in this string we catch that there's a match starting from position *3*,
+[[[https://i.imgur.com/oJANb7q.png
+(((note
+an other way to think about it , is that we chift the string/pattern *P* until it matches with the corresponding substring in text T., in this case the required shift was *s=3*.
+)))note
+###Limitations of the naive approach
+The time complexity of this algorithm is about ^O( n\*m )^ where *m* is the length of P , and *n* length of T, which will be unconceivable  to use in data streams as large as those processed by the likes of *Search engines* .
+There's many different more efficient algorithms to  solve this problem, which mostly use different forms of *preprocesing*.
+There following table presents the major ones and their exact time complexities:
+[[[https://i.imgur.com/TO5Yon4.png
+
+
+(((note
+While * Rabin-Karp * algorithm may have the same worst time time complexity as the Naive approach, in practice, and in average it acts closer to * O(n) *
+)))note
+
+
+##naive approach code
+(((gray
+int  *naive_approach_search( string T, string P)*{
+int j;
+for( int i=0 ; i < T.size() - P.size() ; i++ ){
+
+for( j=0 ; j< P.size() ; j++){
+if( T[i+j] != P[j] )
+  break;
+}
+if( j==P.size() ) return i;
+
+}
+return -1; //not found
+}
+)))gray
+
+
+
+
+
+
+
