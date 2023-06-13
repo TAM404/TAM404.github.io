@@ -4,9 +4,6 @@
    {"name":"The Naive Approach","path":"naive_approach"} 
  ]},
   {"name":"Problems" , "lessons":[ 
-    {"name":"Practice Problem 1","path":"cisco_term"},
+    {"name":"Practice Problem 1","path":"cisco_term"}
  ]}
-
- 
- 
  ]}
