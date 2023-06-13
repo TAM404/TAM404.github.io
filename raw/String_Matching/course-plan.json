@@ -1,7 +1,8 @@
 {"name":"String Matching",
  "sections":[
  {"name":"Algorithms" , "lessons":[ 
-   {"name":"The Naive Approach","path":"naive_approach"} 
+   {"name":"The Naive Approach","path":"naive_approach"} ,
+  {"name":"The Rabin-Karp algorithm","path":"Rabin-Karp"} 
  ]},
   {"name":"Problems" , "lessons":[ 
     {"name":"Practice Problem 1","path":"cisco_term"}
